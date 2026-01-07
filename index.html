@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opskyra | Azure & Cloud Solutions Consulting</title>
+    <meta name="description" content="Opskyra - Premier IT consulting firm specializing in multi-cloud solutions, AI/ML, cybersecurity, and IT operations across AWS, Azure, and GCP.">
+    <title>Opskyra | Multi-Cloud, AI, Cybersecurity & IT Operations Consulting</title>
     <style>
         * {
             margin: 0;
@@ -18,14 +19,14 @@
         }
 
         header {
-            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         nav {
@@ -41,6 +42,10 @@
             font-size: 1.8rem;
             font-weight: bold;
             letter-spacing: 1px;
+            background: linear-gradient(135deg, #00d4ff, #0078d4, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         nav ul {
@@ -52,25 +57,47 @@
         nav a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
             font-weight: 500;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            color: #00d4ff;
         }
 
         .hero {
-            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: white;
             padding: 8rem 2rem 4rem;
             text-align: center;
             margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
@@ -79,19 +106,37 @@
             opacity: 0.9;
         }
 
+        .hero-tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #0078d4;
-            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #00d4ff, #0078d4);
+            color: white;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
         }
 
         .container {
@@ -101,88 +146,177 @@
         }
 
         .services {
-            background: #f5f5f5;
+            background: #f8f9fa;
         }
 
-        .services h2 {
+        .services h2, .expertise h2, .about h2, .contact h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #0078d4;
+            color: #1a1a2e;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
             background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card.cloud {
+            border-top-color: #0078d4;
+        }
+
+        .service-card.ai {
+            border-top-color: #7b2cbf;
+        }
+
+        .service-card.security {
+            border-top-color: #e63946;
+        }
+
+        .service-card.operations {
+            border-top-color: #06a77d;
+        }
+
+        .service-card.devops {
+            border-top-color: #ff6b35;
+        }
+
+        .service-card.data {
+            border-top-color: #4361ee;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .service-card h3 {
-            color: #0078d4;
+            color: #1a1a2e;
             margin-bottom: 1rem;
             font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card ul li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #06a77d;
+            font-weight: bold;
         }
 
         .expertise {
             background: white;
         }
 
-        .expertise h2 {
-            text-align: center;
-            font-size: 2.5rem;
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin-bottom: 3rem;
-            color: #0078d4;
+        }
+
+        .tech-category {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #0078d4;
+        }
+
+        .tech-category h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
+            gap: 0.7rem;
         }
 
         .tech-badge {
-            background: #0078d4;
+            background: white;
+            color: #1a1a2e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .tech-badge:hover {
+            background: #1a1a2e;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            font-weight: bold;
+            border-color: #1a1a2e;
         }
 
         .about {
-            background: #f5f5f5;
-        }
-
-        .about h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #0078d4;
+            background: #f8f9fa;
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: center;
             font-size: 1.1rem;
             line-height: 1.8;
         }
 
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0078d4;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
         .certifications {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -192,18 +326,22 @@
             padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .cert-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-badge strong {
+            display: block;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
         }
 
         .contact {
             background: white;
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #0078d4;
         }
 
         .contact-info {
@@ -217,8 +355,17 @@
             font-size: 1.1rem;
         }
 
+        .contact-item a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
         footer {
-            background: #333;
+            background: #1a1a2e;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -236,6 +383,10 @@
 
             .service-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-tags {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -255,38 +406,99 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>Transform Your Cloud Infrastructure</h1>
-        <p>Expert Azure & Cloud Solutions for Modern Enterprises</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+        <div class="hero-content">
+            <h1>Transform Your Digital Infrastructure</h1>
+            <p>Expert Multi-Cloud, AI, Cybersecurity & IT Operations Consulting</p>
+            <div class="hero-tags">
+                <span class="hero-tag">☁️ Multi-Cloud Solutions</span>
+                <span class="hero-tag">🤖 AI & Machine Learning</span>
+                <span class="hero-tag">🔒 Cybersecurity</span>
+                <span class="hero-tag">⚙️ IT Operations</span>
+            </div>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
     </section>
 
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-grid">
-                <div class="service-card">
-                    <h3>Azure Cloud Architecture</h3>
-                    <p>Design and implement scalable, secure Azure cloud solutions tailored to your business needs. From migration strategy to multi-region deployments.</p>
+                <div class="service-card cloud">
+                    <div class="service-icon">☁️</div>
+                    <h3>Multi-Cloud Solutions</h3>
+                    <p>Comprehensive cloud architecture and migration services across all major platforms.</p>
+                    <ul>
+                        <li>AWS, Azure & GCP Architecture</li>
+                        <li>Cloud Migration & Modernization</li>
+                        <li>Multi-Cloud Strategy</li>
+                        <li>Hybrid Cloud Integration</li>
+                        <li>Cost Optimization</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Kubernetes & Container Solutions</h3>
-                    <p>Expert AKS cluster management, containerization strategies, and orchestration solutions for modern applications.</p>
+
+                <div class="service-card ai">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Cutting-edge AI/ML solutions to drive innovation and automation.</p>
+                    <ul>
+                        <li>AI Strategy & Implementation</li>
+                        <li>Machine Learning Models</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision Solutions</li>
+                        <li>MLOps & Model Deployment</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Infrastructure Automation</h3>
-                    <p>Implement GitOps workflows, Infrastructure as Code with Terraform, and CI/CD pipelines for efficient operations.</p>
+
+                <div class="service-card security">
+                    <div class="service-icon">🔒</div>
+                    <h3>Cybersecurity</h3>
+                    <p>Robust security frameworks to protect your infrastructure and data.</p>
+                    <ul>
+                        <li>Security Architecture Design</li>
+                        <li>Penetration Testing</li>
+                        <li>Compliance & Governance</li>
+                        <li>Threat Detection & Response</li>
+                        <li>Zero Trust Implementation</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>API Management</h3>
-                    <p>Design and deploy enterprise API strategies with Azure APIM, including security, monitoring, and developer portals.</p>
+
+                <div class="service-card operations">
+                    <div class="service-icon">⚙️</div>
+                    <h3>IT Operations</h3>
+                    <p>Streamlined operations management for maximum efficiency and reliability.</p>
+                    <ul>
+                        <li>24/7 Infrastructure Monitoring</li>
+                        <li>Incident Management</li>
+                        <li>Performance Optimization</li>
+                        <li>Disaster Recovery Planning</li>
+                        <li>SLA Management</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Cost Optimization</h3>
-                    <p>Analyze and optimize your cloud spending with proven strategies for resource right-sizing and efficient architecture.</p>
+
+                <div class="service-card devops">
+                    <div class="service-icon">🚀</div>
+                    <h3>DevOps & Automation</h3>
+                    <p>Accelerate delivery with modern DevOps practices and automation.</p>
+                    <ul>
+                        <li>CI/CD Pipeline Design</li>
+                        <li>Infrastructure as Code</li>
+                        <li>Container Orchestration</li>
+                        <li>GitOps Implementation</li>
+                        <li>Release Management</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Security & Compliance</h3>
-                    <p>Implement robust security frameworks, compliance standards, and disaster recovery solutions for your cloud infrastructure.</p>
+
+                <div class="service-card data">
+                    <div class="service-icon">📊</div>
+                    <h3>Data & Analytics</h3>
+                    <p>Transform data into actionable insights with modern analytics solutions.</p>
+                    <ul>
+                        <li>Data Platform Engineering</li>
+                        <li>Real-time Analytics</li>
+                        <li>Data Warehousing</li>
+                        <li>Business Intelligence</li>
+                        <li>Data Governance</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -295,19 +507,78 @@
     <section id="expertise" class="expertise">
         <div class="container">
             <h2>Technical Expertise</h2>
-            <div class="tech-stack">
-                <span class="tech-badge">Microsoft Azure</span>
-                <span class="tech-badge">Kubernetes (AKS)</span>
-                <span class="tech-badge">Terraform</span>
-                <span class="tech-badge">Azure DevOps</span>
-                <span class="tech-badge">API Management</span>
-                <span class="tech-badge">Docker</span>
-                <span class="tech-badge">PostgreSQL</span>
-                <span class="tech-badge">Azure NetApp Files</span>
-                <span class="tech-badge">Application Gateway</span>
-                <span class="tech-badge">New Relic</span>
-                <span class="tech-badge">GitOps</span>
-                <span class="tech-badge">CI/CD Pipelines</span>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>☁️ Cloud Platforms</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Microsoft Azure</span>
+                        <span class="tech-badge">Google Cloud</span>
+                        <span class="tech-badge">Oracle Cloud</span>
+                        <span class="tech-badge">IBM Cloud</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>🤖 AI & ML</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">PyTorch</span>
+                        <span class="tech-badge">OpenAI</span>
+                        <span class="tech-badge">Hugging Face</span>
+                        <span class="tech-badge">LangChain</span>
+                        <span class="tech-badge">AWS SageMaker</span>
+                        <span class="tech-badge">Azure AI</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>🔒 Security Tools</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">CrowdStrike</span>
+                        <span class="tech-badge">Palo Alto</span>
+                        <span class="tech-badge">Splunk</span>
+                        <span class="tech-badge">Wiz</span>
+                        <span class="tech-badge">Snyk</span>
+                        <span class="tech-badge">HashiCorp Vault</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>🐳 Containers & Orchestration</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">EKS</span>
+                        <span class="tech-badge">AKS</span>
+                        <span class="tech-badge">GKE</span>
+                        <span class="tech-badge">Helm</span>
+                        <span class="tech-badge">Istio</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>⚙️ Infrastructure & Automation</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Ansible</span>
+                        <span class="tech-badge">Pulumi</span>
+                        <span class="tech-badge">CloudFormation</span>
+                        <span class="tech-badge">ARM Templates</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>📊 Monitoring & Observability</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Datadog</span>
+                        <span class="tech-badge">New Relic</span>
+                        <span class="tech-badge">Prometheus</span>
+                        <span class="tech-badge">Grafana</span>
+                        <span class="tech-badge">ELK Stack</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -316,33 +587,67 @@
         <div class="container">
             <h2>About Opskyra</h2>
             <div class="about-content">
-                <p>Opskyra is a premier IT consulting firm specializing in Azure cloud solutions and infrastructure automation. With over a decade of experience in enterprise IT and cloud engineering, we deliver cutting-edge solutions that drive business transformation.</p>
-                <p style="margin-top: 1.5rem;">Our expertise spans across cloud architecture, Kubernetes orchestration, infrastructure automation, and security engineering. We help organizations migrate to the cloud, optimize their existing infrastructure, and implement best practices for operational excellence.</p>
+                <p>Opskyra is a premier IT consulting firm delivering transformative solutions across multi-cloud environments, artificial intelligence, cybersecurity, and IT operations. With deep expertise spanning AWS, Azure, and Google Cloud Platform, we help organizations navigate the complexities of modern digital infrastructure.</p>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Major Cloud Platforms</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;">Our team of certified experts brings a wealth of experience in cloud architecture, AI/ML engineering, security engineering, and DevOps practices. We partner with organizations to design, implement, and optimize solutions that drive innovation, enhance security, and maximize operational efficiency.</p>
             </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #1a1a2e; font-size: 1.8rem;">Certifications & Expertise</h3>
             <div class="certifications">
                 <div class="cert-badge">
-                    <strong>Azure Solutions Architect Expert</strong>
-                    <p>AZ-305</p>
+                    <strong>AWS Solutions Architect</strong>
+                    <p>Professional</p>
+                </div>
+                <div class="cert-badge">
+                    <strong>Azure Solutions Architect</strong>
+                    <p>Expert (AZ-305)</p>
+                </div>
+                <div class="cert-badge">
+                    <strong>Google Cloud Architect</strong>
+                    <p>Professional</p>
+                </div>
+                <div class="cert-badge">
+                    <strong>Certified Kubernetes</strong>
+                    <p>CKA & CKS</p>
                 </div>
                 <div class="cert-badge">
                     <strong>Azure Security Engineer</strong>
                     <p>AZ-500</p>
                 </div>
                 <div class="cert-badge">
-                    <strong>Certified Kubernetes Administrator</strong>
-                    <p>CKA</p>
+                    <strong>AWS Security</strong>
+                    <p>Specialty</p>
                 </div>
                 <div class="cert-badge">
-                    <strong>Kubernetes Security Specialist</strong>
-                    <p>CKS</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>HashiCorp Terraform Associate</strong>
-                    <p>Certified</p>
+                    <strong>HashiCorp Terraform</strong>
+                    <p>Associate</p>
                 </div>
                 <div class="cert-badge">
                     <strong>Azure AI Engineer</strong>
                     <p>AI-102</p>
+                </div>
+                <div class="cert-badge">
+                    <strong>CISSP</strong>
+                    <p>Security Professional</p>
                 </div>
             </div>
         </div>
@@ -353,21 +658,24 @@
             <h2>Get In Touch</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <strong>Email:</strong> contact@opskyra.com
+                    <strong>Email:</strong> <a href="mailto:contact@opskyra.com">contact@opskyra.com</a>
                 </div>
                 <div class="contact-item">
                     <strong>Location:</strong> Bangalore, India
                 </div>
                 <div class="contact-item">
-                    <strong>Services:</strong> Available for Global Projects
+                    <strong>Services:</strong> Global Delivery Model
                 </div>
-                <p style="margin-top: 2rem;">Ready to transform your cloud infrastructure? Let's discuss how we can help your organization achieve its goals.</p>
+                <div class="contact-item">
+                    <strong>Availability:</strong> 24/7 Support & Consulting
+                </div>
+                <p style="margin-top: 2rem; font-size: 1.1rem;">Ready to transform your infrastructure with multi-cloud, AI, and security expertise? Let's discuss how we can help your organization achieve its digital transformation goals.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Opskyra. All rights reserved. | Professional Cloud Consulting Services</p>
+        <p>&copy; 2025 Opskyra. All rights reserved. | Multi-Cloud • AI • Cybersecurity • IT Operations</p>
     </footer>
 </body>
 </html>
