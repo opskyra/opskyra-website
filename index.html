@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Opskyra - Premier IT consulting firm specializing in multi-cloud solutions, AI/ML, cybersecurity, and IT operations across AWS, Azure, and GCP.">
     <title>Opskyra | Multi-Cloud, AI, Cybersecurity & IT Operations Consulting</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a2e'/%3E%3Cg transform='translate(16, 16) scale(0.13)'%3E%3Ccircle cx='0' cy='-70' r='12' fill='none' stroke='%2300d4ff' stroke-width='4'/%3E%3Ccircle cx='0' cy='-70' r='5' fill='%2300d4ff'/%3E%3Cline x1='-40' y1='-70' x2='-15' y2='-70' stroke='%2300d4ff' stroke-width='4'/%3E%3Cline x1='15' y1='-70' x2='40' y2='-70' stroke='%2300d4ff' stroke-width='4'/%3E%3Cpath d='M -60,-40 Q -25,-35 0,-35 Q 5,-40 12,-30 Q 25,-35 60,-40' fill='none' stroke='%2300d4ff' stroke-width='4'/%3E%3Cpath d='M -70,-10 Q -30,0 10,0 Q 30,0 70,-10' fill='none' stroke='%2300d4ff' stroke-width='4'/%3E%3Cpath d='M -60,40 Q -25,35 0,35 Q 5,40 12,30 Q 25,35 60,40' fill='none' stroke='%2300d4ff' stroke-width='4'/%3E%3Ccircle cx='0' cy='70' r='12' fill='none' stroke='%2300d4ff' stroke-width='4'/%3E%3Ccircle cx='0' cy='70' r='5' fill='%2300d4ff'/%3E%3Cline x1='-40' y1='70' x2='-15' y2='70' stroke='%2300d4ff' stroke-width='4'/%3E%3Cline x1='15' y1='70' x2='40' y2='70' stroke='%2300d4ff' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
@@ -39,19 +40,23 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #00d4ff, #0078d4, #7b2cbf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
+        }
+
+        nav li {
+            position: relative;
         }
 
         nav a {
@@ -62,6 +67,40 @@
         }
 
         nav a:hover {
+            color: #00d4ff;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #16213e;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background: #1a1a2e;
             color: #00d4ff;
         }
 
@@ -198,6 +237,22 @@
 
         .service-card.data {
             border-top-color: #4361ee;
+        }
+
+        .service-card.staffing {
+            border-top-color: #f72585;
+        }
+
+        .service-card.training {
+            border-top-color: #faa307;
+        }
+
+        .service-card.internship {
+            border-top-color: #4cc9f0;
+        }
+
+        .service-card.poc {
+            border-top-color: #2a9d8f;
         }
 
         .service-icon {
@@ -371,6 +426,16 @@
             padding: 2rem;
         }
 
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -394,10 +459,22 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Opskyra</div>
+            <div class="logo">
+                <img src="logo.jpg" alt="Opskyra Logo" style="width: 50px; height: 50px; margin-right: 12px; filter: brightness(1.1);">
+                <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: white;">Opskyra</span>
+                    <span style="font-size: 0.7rem; color: #00d4ff; font-weight: 400; letter-spacing: 1px; margin-top: -2px;">Run Better in the Cloud</span>
+                </div>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#services">All Services</a>
+                        <a href="staffing.html">IT Staffing</a>
+                    </div>
+                </li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -407,13 +484,17 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Transform Your Digital Infrastructure</h1>
+            <h1>Run Better in the Cloud</h1>
             <p>Expert Multi-Cloud, AI, Cybersecurity & IT Operations Consulting</p>
             <div class="hero-tags">
                 <span class="hero-tag">☁️ Multi-Cloud Solutions</span>
                 <span class="hero-tag">🤖 AI & Machine Learning</span>
                 <span class="hero-tag">🔒 Cybersecurity</span>
                 <span class="hero-tag">⚙️ IT Operations</span>
+                <span class="hero-tag">👥 IT Staffing</span>
+                <span class="hero-tag">🎓 IT Training</span>
+                <span class="hero-tag">🎯 Internships</span>
+                <span class="hero-tag">🔬 POC Development</span>
             </div>
             <a href="#contact" class="cta-button">Get Started</a>
         </div>
@@ -498,6 +579,59 @@
                         <li>Data Warehousing</li>
                         <li>Business Intelligence</li>
                         <li>Data Governance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card staffing">
+                    <div class="service-icon">👥</div>
+                    <h3>IT Staffing Solutions</h3>
+                    <p>Connect with top-tier IT talent for your cloud, AI, and technology initiatives.</p>
+                    <ul>
+                        <li>Cloud Engineers & Architects</li>
+                        <li>AI/ML Specialists</li>
+                        <li>DevOps & SRE Professionals</li>
+                        <li>Cybersecurity Experts</li>
+                        <li>Contract & Permanent Placement</li>
+                    </ul>
+                    <a href="staffing.html" style="display: inline-block; margin-top: 1rem; color: #f72585; font-weight: 600; text-decoration: none;">Learn More →</a>
+                </div>
+
+                <div class="service-card training">
+                    <div class="service-icon">🎓</div>
+                    <h3>Corporate Training</h3>
+                    <p>Upskill your teams with expert-led training in cutting-edge cloud and AI technologies.</p>
+                    <ul>
+                        <li>AWS, Azure & GCP Certification Training</li>
+                        <li>AI/ML & Deep Learning Workshops</li>
+                        <li>Kubernetes & Container Technologies</li>
+                        <li>DevOps & GitOps Best Practices</li>
+                        <li>Customized Corporate Programs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card internship">
+                    <div class="service-icon">🎯</div>
+                    <h3>Internship Programs</h3>
+                    <p>Launch your tech career with hands-on experience in cloud, AI, and modern IT operations.</p>
+                    <ul>
+                        <li>Cloud Engineering Internships</li>
+                        <li>AI/ML Research & Development</li>
+                        <li>DevOps & Automation Training</li>
+                        <li>Real-world Project Experience</li>
+                        <li>Mentorship from Industry Experts</li>
+                    </ul>
+                </div>
+
+                <div class="service-card poc">
+                    <div class="service-icon">🔬</div>
+                    <h3>Proof of Concept (POC)</h3>
+                    <p>Validate your ideas with rapid POC development for cloud and AI solutions.</p>
+                    <ul>
+                        <li>Cloud Migration POCs</li>
+                        <li>AI/ML Model Prototypes</li>
+                        <li>Containerization Pilots</li>
+                        <li>Security Framework Testing</li>
+                        <li>Quick Time-to-Value (2-4 weeks)</li>
                     </ul>
                 </div>
             </div>
@@ -587,7 +721,7 @@
         <div class="container">
             <h2>About Opskyra</h2>
             <div class="about-content">
-                <p>Opskyra is a premier IT consulting firm delivering transformative solutions across multi-cloud environments, artificial intelligence, cybersecurity, and IT operations. With deep expertise spanning AWS, Azure, and Google Cloud Platform, we help organizations navigate the complexities of modern digital infrastructure.</p>
+                <p>Opskyra is a premier IT consulting and staffing firm delivering transformative solutions across multi-cloud environments, artificial intelligence, cybersecurity, and IT operations. With deep expertise spanning AWS, Azure, and Google Cloud Platform, we help organizations navigate the complexities of modern digital infrastructure while connecting them with top-tier IT talent.</p>
                 
                 <div class="stats">
                     <div class="stat-card">
@@ -608,7 +742,7 @@
                     </div>
                 </div>
 
-                <p style="margin-top: 2rem;">Our team of certified experts brings a wealth of experience in cloud architecture, AI/ML engineering, security engineering, and DevOps practices. We partner with organizations to design, implement, and optimize solutions that drive innovation, enhance security, and maximize operational efficiency.</p>
+                <p style="margin-top: 2rem;">Our team of certified experts brings a wealth of experience in cloud architecture, AI/ML engineering, security engineering, and DevOps practices. We partner with organizations to design, implement, and optimize solutions that drive innovation, enhance security, and maximize operational efficiency. Through our IT staffing services, we connect businesses with exceptional talent to power their technology initiatives. Our corporate training programs and internship opportunities help develop the next generation of cloud and AI professionals while providing hands-on experience with cutting-edge technologies. Additionally, we offer rapid POC development to validate innovative ideas before full-scale implementation.</p>
             </div>
 
             <h3 style="text-align: center; margin: 3rem 0 2rem; color: #1a1a2e; font-size: 1.8rem;">Certifications & Expertise</h3>
@@ -658,10 +792,13 @@
             <h2>Get In Touch</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <strong>Email:</strong> <a href="mailto:contact@opskyra.com">contact@opskyra.com</a>
+                    <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#91f2feffe5f0f2e5d1fee1e2fae8e3f0bff2fefc"><span class="__cf_email__" data-cfemail="6c0f0302180d0f182c031c1f07151e0d420f0301">[email&#160;protected]</span></a>
                 </div>
                 <div class="contact-item">
-                    <strong>Location:</strong> Bangalore, India
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/opskyra" target="_blank" rel="noopener noreferrer">linkedin.com/in/opskyra</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> Kochi, Kerala, India
                 </div>
                 <div class="contact-item">
                     <strong>Services:</strong> Global Delivery Model
@@ -669,13 +806,16 @@
                 <div class="contact-item">
                     <strong>Availability:</strong> 24/7 Support & Consulting
                 </div>
-                <p style="margin-top: 2rem; font-size: 1.1rem;">Ready to transform your infrastructure with multi-cloud, AI, and security expertise? Let's discuss how we can help your organization achieve its digital transformation goals.</p>
+                <p style="margin-top: 2rem; font-size: 1.1rem;">Ready to transform your infrastructure with multi-cloud, AI, and security expertise? Looking for top IT talent? Let's discuss how we can help your organization achieve its digital transformation goals through our consulting and staffing solutions.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Opskyra. All rights reserved. | Multi-Cloud • AI • Cybersecurity • IT Operations</p>
-    </footer>
-</body>
-</html>
+        <div style="margin-bottom: 1rem;">
+            <img src="logo.jpg" alt="Opskyra Logo" style="width: 60px; height: 60px; filter: brightness(1.2);">
+        </div>
+        <p>&copy; 2025 Opskyra. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Multi-Cloud • AI • Cybersecurity • Operations • Staffing • Training • Internships • POC</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/cdn-cgi/l/email-protection#15767a7b61747661557a65667e6c67743
