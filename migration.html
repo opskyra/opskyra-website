@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Opskyra Cloud Migration Services - Seamless migration to AWS, Azure, and GCP with zero downtime and optimized performance.">
+    <title>Cloud Migration Services | Opskyra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --dark-blue: #003d7a;
+            --cyan: #00d4ff;
+            --dark-bg: #0a1929;
+            --section-bg: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--section-bg);
+            color: var(--primary-blue);
+        }
+
+        .cta-nav {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0078d4 0%, #0066cc 100%);
+            color: white;
+            padding: 150px 3rem 80px;
+            margin-top: 73px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .intro {
+            background: white;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .intro p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .process {
+            background: var(--section-bg);
+        }
+
+        .process h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .benefits {
+            background: white;
+        }
+
+        .benefits h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 12px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .process-steps, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo-transparent.svg" alt="Opskyra Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Opskyra</span>
+                    <span class="logo-tagline">Run Better in the Cloud</span>
+                </div>
+            </a>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html#services">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#services">All Services</a>
+                        <a href="training.html">Training Programs</a>
+                        <a href="staffing.html">IT Staffing</a>
+                        <a href="operations-support.html">Operations Support</a>
+                        <a href="migration.html">Cloud Migration</a>
+                        <a href="managed-services.html">Managed Services</a>
+                    </div>
+                </li>
+                <li><a href="/cdn-cgi/l/email-protection#395a56574d585a4d7956494a52404b58175a5654" class="cta-nav">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cloud Migration Services</h1>
+        <p>Seamless Migration to AWS, Azure & GCP with Zero Downtime</p>
+    </section>
+
+    <div class="container intro">
+        <h2>Your Trusted Cloud Migration Partner</h2>
+        <p>Cloud migration is more than just moving data—it's a strategic transformation that requires careful planning, expert execution, and continuous optimization. Opskyra specializes in end-to-end cloud migration services that minimize risk, reduce downtime, and maximize the value of your cloud investment.</p>
+        
+        <p>Whether you're migrating from on-premises infrastructure to the cloud, moving between cloud providers, or consolidating multiple environments, our certified cloud architects ensure a smooth, secure transition tailored to your business requirements.</p>
+        
+        <p>With expertise across AWS, Microsoft Azure, and Google Cloud Platform, we deliver proven migration strategies that have successfully moved thousands of workloads to the cloud with minimal business disruption.</p>
+    </div>
+
+    <section class="process">
+        <div class="container">
+            <h2>Our Migration Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Assessment & Planning</h3>
+                    <p>Comprehensive discovery of current infrastructure, application dependencies, and business requirements. Create detailed migration roadmap with timelines and risk mitigation strategies.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Strategy Design</h3>
+                    <p>Determine optimal migration approach (Rehost, Replatform, Refactor, or Rebuild). Select target cloud services and design cloud-native architecture.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Proof of Concept</h3>
+                    <p>Validate migration strategy with pilot workloads. Test performance, security, and functionality. Refine approach based on findings.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Migration Execution</h3>
+                    <p>Phased migration execution with minimal downtime. Continuous monitoring during migration. Rollback procedures ready if needed.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Testing & Validation</h3>
+                    <p>Comprehensive testing of migrated workloads. Performance validation and security verification. Application functionality testing.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Optimization & Handover</h3>
+                    <p>Post-migration optimization for cost and performance. Knowledge transfer to your team. Ongoing support and monitoring setup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Migration Approaches We Support</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🚀 Rehost (Lift & Shift)</h3>
+                    <p>Quick migration with minimal changes. Move applications as-is to cloud infrastructure. Fastest time-to-cloud with immediate benefits.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🔧 Replatform (Lift, Tinker & Shift)</h3>
+                    <p>Optimize during migration without redesigning. Leverage cloud-managed services. Balance speed with cloud-native benefits.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>♻️ Refactor (Re-architect)</h3>
+                    <p>Redesign for cloud-native architecture. Maximize cloud benefits and scalability. Long-term optimization and modernization.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🆕 Rebuild</h3>
+                    <p>Build from scratch on cloud-native platforms. Complete application modernization. Leverage latest cloud technologies and services.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🔄 Hybrid Migration</h3>
+                    <p>Maintain on-premises and cloud infrastructure. Gradual migration path. Compliance and data residency support.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🌐 Multi-Cloud Migration</h3>
+                    <p>Distribute workloads across multiple clouds. Avoid vendor lock-in. Optimize for cost and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2>What We Migrate</h2>
+        
+        <div style="margin-top: 2rem;">
+            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Applications & Workloads</h3>
+            <p>Web applications, enterprise applications, databases, legacy systems, microservices, containerized applications, serverless functions</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Infrastructure Components</h3>
+            <p>Virtual machines, storage systems, network configurations, load balancers, DNS records, security groups, backup systems</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Data Migration</h3>
+            <p>Database migration (SQL, NoSQL), file server migration, object storage migration, data warehouse migration, real-time data replication</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Target Platforms</h3>
+            <p>✓ Amazon Web Services (AWS)<br>
+            ✓ Microsoft Azure<br>
+            ✓ Google Cloud Platform (GCP)<br>
+            ✓ Multi-Cloud Architectures<br>
+            ✓ Hybrid Cloud Solutions</p>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--section-bg); border-radius: 12px;">
+            <h3 style="margin-bottom: 1rem;">Key Benefits</h3>
+            <ul style="list-style: none;">
+                <li style="padding: 0.5rem 0;">✓ <strong>Zero-Downtime Migration:</strong> Advanced techniques to maintain business continuity</li>
+                <li style="padding: 0.5rem 0;">✓ <strong>Risk Mitigation:</strong> Comprehensive testing and rollback procedures</li>
+                <li style="padding: 0.5rem 0;">✓ <strong>Cost Optimization:</strong> Right-sizing and reserved instance planning</li>
+                <li style="padding: 0.5rem 0;">✓ <strong>Security First:</strong> Data encryption, compliance, and access controls</li>
+                <li style="padding: 0.5rem 0;">✓ <strong>Performance Validation:</strong> Ensure applications run better in cloud</li>
+                <li style="padding: 0.5rem 0;">✓ <strong>Knowledge Transfer:</strong> Train your team for cloud operations</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>Ready to Move to the Cloud?</h2>
+        <p>Start your cloud migration journey with confidence. Our experts will guide you every step of the way.</p>
+        <a href="/cdn-cgi/l/email-protection#c1a2aeafb5a0a2b581aeb1b2aab8b3a0efa2aeac" class="cta-button">Schedule a Migration Assessment</a>
+    </section>
+
+    <footer>
+        <img src="logo-transparent.svg" alt="Opskyra" style="width: 50px; margin-bottom: 1rem;">
+        <p>&copy; 2025 Opskyra. All rights reserved.</p>
+        <p style="margin-top: 1rem;">
+            <a href="/cdn-cgi/l/email-protection#4724282933262433072837342c3e35266924282a">Email</a> |
+            <a href="https://www.linkedin.com/i

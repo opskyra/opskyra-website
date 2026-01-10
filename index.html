@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Opskyra - Premier IT consulting firm specializing in multi-cloud solutions, AI/ML, cybersecurity, and IT operations across AWS, Azure, and GCP.">
-    <title>Opskyra | Multi-Cloud, AI, Cybersecurity & IT Operations Consulting</title>
+    <meta name="description" content="Opskyra - Premier IT consulting firm specializing in multi-cloud solutions, AI/ML, cybersecurity, IT operations, staffing, training, and internships.">
+    <title>Opskyra | Run Better in the Cloud</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,65 +15,162 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --primary-blue: #0066cc;
+            --dark-blue: #003d7a;
+            --light-blue: #4d94ff;
+            --cyan: #00d4ff;
+            --dark-bg: #0a1929;
+            --section-bg: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --white: #ffffff;
         }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 1rem 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1.2rem 3rem;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #00d4ff, #0078d4, #7b2cbf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
-        nav a {
-            color: white;
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-dark);
             text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s;
             font-weight: 500;
         }
 
-        nav a:hover {
-            color: #00d4ff;
+        .dropdown-menu a:hover {
+            background: var(--section-bg);
+            color: var(--primary-blue);
+            padding-left: 2rem;
         }
 
+        .cta-nav {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d2136 100%);
             color: white;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            margin-top: 60px;
+            padding: 180px 3rem 100px;
+            margin-top: 73px;
             position: relative;
             overflow: hidden;
         }
@@ -79,22 +179,31 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(77,148,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23smallGrid)"/></svg>');
+            opacity: 0.5;
         }
 
         .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #00d4ff);
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #00d4ff, #4d94ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -102,580 +211,516 @@
 
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
         }
 
-        .hero-tags {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .hero-tag {
-            background: rgba(255,255,255,0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .cta-button {
+        .hero-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #00d4ff, #0078d4);
-            color: white;
+            background: var(--cyan);
+            color: var(--dark-bg);
             padding: 1rem 2.5rem;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .services {
-            background: #f8f9fa;
-        }
-
-        .services h2, .expertise h2, .about h2, .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1a1a2e;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .service-card.cloud {
-            border-top-color: #0078d4;
-        }
-
-        .service-card.ai {
-            border-top-color: #7b2cbf;
-        }
-
-        .service-card.security {
-            border-top-color: #e63946;
-        }
-
-        .service-card.operations {
-            border-top-color: #06a77d;
-        }
-
-        .service-card.devops {
-            border-top-color: #ff6b35;
-        }
-
-        .service-card.data {
-            border-top-color: #4361ee;
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #1a1a2e;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .service-card ul li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .service-card ul li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #06a77d;
-            font-weight: bold;
-        }
-
-        .expertise {
-            background: white;
-        }
-
-        .tech-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .tech-category {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #0078d4;
-        }
-
-        .tech-category h3 {
-            color: #1a1a2e;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-        }
-
-        .tech-badge {
-            background: white;
-            color: #1a1a2e;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid #ddd;
+            font-weight: 600;
+            font-size: 1.05rem;
             transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0,212,255,0.3);
         }
 
-        .tech-badge:hover {
-            background: #1a1a2e;
-            color: white;
-            border-color: #1a1a2e;
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,212,255,0.4);
         }
 
-        .about {
-            background: #f8f9fa;
+        /* Services Section */
+        .services-intro {
+            background: var(--section-bg);
+            padding: 6rem 3rem;
+            text-align: center;
         }
 
-        .about-content {
+        .services-intro h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .services-intro h2 span {
+            color: var(--primary-blue);
+        }
+
+        .services-intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
             max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.1rem;
+            margin: 0 auto 1.5rem;
             line-height: 1.8;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        /* Services Grid */
+        .services-grid {
+            background: var(--white);
+            padding: 6rem 3rem;
         }
 
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #0078d4;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .cert-badge {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .cert-badge:hover {
-            transform: scale(1.05);
-        }
-
-        .cert-badge strong {
-            display: block;
-            color: #1a1a2e;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact {
-            background: white;
-        }
-
-        .contact-info {
-            max-width: 600px;
+        .services-container {
+            max-width: 1400px;
             margin: 0 auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
-        .contact-item {
-            margin: 1.5rem 0;
-            font-size: 1.1rem;
+        .service-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-item a {
-            color: #0078d4;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--primary-blue);
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) saturate(100%) invert(35%) sepia(97%) saturate(1757%) hue-rotate(196deg) brightness(95%) contrast(101%);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-link {
+            color: var(--primary-blue);
             text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
+        .service-link:hover {
+            gap: 1rem;
         }
 
-        footer {
-            background: #1a1a2e;
+        .service-link::after {
+            content: '→';
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
             color: white;
+            padding: 6rem 3rem;
             text-align: center;
-            padding: 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,255,255,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            nav {
+                padding: 1rem 1.5rem;
             }
 
             nav ul {
-                flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
-            .service-grid {
+            .hero {
+                padding: 140px 1.5rem 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .services-container {
                 grid-template-columns: 1fr;
             }
 
-            .hero-tags {
-                font-size: 0.8rem;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Opskyra</div>
+            <a href="index.html" class="logo-container">
+                <img src="logo-transparent.svg" alt="Opskyra Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Opskyra</span>
+                    <span class="logo-tagline">Run Better in the Cloud</span>
+                </div>
+            </a>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="#services">All Services</a>
+                        <a href="training.html">Training Programs</a>
+                        <a href="staffing.html">IT Staffing</a>
+                        <a href="operations-support.html">Operations Support</a>
+                        <a href="migration.html">Cloud Migration</a>
+                        <a href="managed-services.html">Managed Services</a>
+                    </div>
+                </li>
+                <li><a href="#contact" class="cta-nav">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-content">
-            <h1>Transform Your Digital Infrastructure</h1>
-            <p>Expert Multi-Cloud, AI, Cybersecurity & IT Operations Consulting</p>
-            <div class="hero-tags">
-                <span class="hero-tag">☁️ Multi-Cloud Solutions</span>
-                <span class="hero-tag">🤖 AI & Machine Learning</span>
-                <span class="hero-tag">🔒 Cybersecurity</span>
-                <span class="hero-tag">⚙️ IT Operations</span>
-            </div>
-            <a href="#contact" class="cta-button">Get Started</a>
+            <h1>
+                Cloud Excellence, <span>Delivered</span>
+            </h1>
+            <p>
+                Opskyra specializes in multi-cloud architecture, AI/ML implementation, and enterprise-grade infrastructure solutions. We design, build, and optimize cloud environments that power business growth across AWS, Azure, and Google Cloud Platform.
+            </p>
+            <p>
+                From zero-downtime migrations to 24/7 operational support, our certified engineers deliver technical excellence with measurable results. Transform your infrastructure with proven cloud expertise.
+            </p>
+            <a href="#contact" class="hero-cta">Get Started</a>
         </div>
     </section>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-grid">
-                <div class="service-card cloud">
-                    <div class="service-icon">☁️</div>
-                    <h3>Multi-Cloud Solutions</h3>
-                    <p>Comprehensive cloud architecture and migration services across all major platforms.</p>
-                    <ul>
-                        <li>AWS, Azure & GCP Architecture</li>
-                        <li>Cloud Migration & Modernization</li>
-                        <li>Multi-Cloud Strategy</li>
-                        <li>Hybrid Cloud Integration</li>
-                        <li>Cost Optimization</li>
-                    </ul>
-                </div>
-
-                <div class="service-card ai">
-                    <div class="service-icon">🤖</div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Cutting-edge AI/ML solutions to drive innovation and automation.</p>
-                    <ul>
-                        <li>AI Strategy & Implementation</li>
-                        <li>Machine Learning Models</li>
-                        <li>Natural Language Processing</li>
-                        <li>Computer Vision Solutions</li>
-                        <li>MLOps & Model Deployment</li>
-                    </ul>
-                </div>
-
-                <div class="service-card security">
-                    <div class="service-icon">🔒</div>
-                    <h3>Cybersecurity</h3>
-                    <p>Robust security frameworks to protect your infrastructure and data.</p>
-                    <ul>
-                        <li>Security Architecture Design</li>
-                        <li>Penetration Testing</li>
-                        <li>Compliance & Governance</li>
-                        <li>Threat Detection & Response</li>
-                        <li>Zero Trust Implementation</li>
-                    </ul>
-                </div>
-
-                <div class="service-card operations">
-                    <div class="service-icon">⚙️</div>
-                    <h3>IT Operations</h3>
-                    <p>Streamlined operations management for maximum efficiency and reliability.</p>
-                    <ul>
-                        <li>24/7 Infrastructure Monitoring</li>
-                        <li>Incident Management</li>
-                        <li>Performance Optimization</li>
-                        <li>Disaster Recovery Planning</li>
-                        <li>SLA Management</li>
-                    </ul>
-                </div>
-
-                <div class="service-card devops">
-                    <div class="service-icon">🚀</div>
-                    <h3>DevOps & Automation</h3>
-                    <p>Accelerate delivery with modern DevOps practices and automation.</p>
-                    <ul>
-                        <li>CI/CD Pipeline Design</li>
-                        <li>Infrastructure as Code</li>
-                        <li>Container Orchestration</li>
-                        <li>GitOps Implementation</li>
-                        <li>Release Management</li>
-                    </ul>
-                </div>
-
-                <div class="service-card data">
-                    <div class="service-icon">📊</div>
-                    <h3>Data & Analytics</h3>
-                    <p>Transform data into actionable insights with modern analytics solutions.</p>
-                    <ul>
-                        <li>Data Platform Engineering</li>
-                        <li>Real-time Analytics</li>
-                        <li>Data Warehousing</li>
-                        <li>Business Intelligence</li>
-                        <li>Data Governance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- Services Intro -->
+    <section class="services-intro" id="services">
+        <h2>Let the <span>experts</span> do the work, explore our services</h2>
+        <p>Comprehensive cloud solutions, AI/ML implementation, cybersecurity, IT operations, staffing, and training programs tailored to your business needs.</p>
     </section>
 
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <h2>Technical Expertise</h2>
-            
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3>☁️ Cloud Platforms</h3>
-                    <div class="tech-stack">
-                        <span class="tech-badge">AWS</span>
-                        <span class="tech-badge">Microsoft Azure</span>
-                        <span class="tech-badge">Google Cloud</span>
-                        <span class="tech-badge">Oracle Cloud</span>
-                        <span class="tech-badge">IBM Cloud</span>
-                    </div>
-                </div>
+    <!-- Services Grid -->
+    <section class="services-grid">
+        <div class="services-container">
+            <!-- Multi-Cloud Services -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'/%3E%3C/svg%3E" alt="Cloud" class="service-icon">
+                <h3>Multi-Cloud Solutions</h3>
+                <p>Comprehensive architecture and migration services across AWS, Azure, and GCP. Strategic multi-cloud design for optimal performance and cost efficiency.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
 
-                <div class="tech-category">
-                    <h3>🤖 AI & ML</h3>
-                    <div class="tech-stack">
-                        <span class="tech-badge">TensorFlow</span>
-                        <span class="tech-badge">PyTorch</span>
-                        <span class="tech-badge">OpenAI</span>
-                        <span class="tech-badge">Hugging Face</span>
-                        <span class="tech-badge">LangChain</span>
-                        <span class="tech-badge">AWS SageMaker</span>
-                        <span class="tech-badge">Azure AI</span>
-                    </div>
-                </div>
+            <!-- AI/ML -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3Cpath d='M2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E" alt="AI" class="service-icon">
+                <h3>AI & Machine Learning</h3>
+                <p>Cutting-edge AI/ML solutions from strategy to deployment. Build intelligent systems with modern MLOps practices and proven frameworks.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
 
-                <div class="tech-category">
-                    <h3>🔒 Security Tools</h3>
-                    <div class="tech-stack">
-                        <span class="tech-badge">CrowdStrike</span>
-                        <span class="tech-badge">Palo Alto</span>
-                        <span class="tech-badge">Splunk</span>
-                        <span class="tech-badge">Wiz</span>
-                        <span class="tech-badge">Snyk</span>
-                        <span class="tech-badge">HashiCorp Vault</span>
-                    </div>
-                </div>
+            <!-- Cybersecurity -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E" alt="Security" class="service-icon">
+                <h3>Cybersecurity</h3>
+                <p>Comprehensive security frameworks, penetration testing, and compliance management. Zero Trust architecture and advanced threat protection.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
 
-                <div class="tech-category">
-                    <h3>🐳 Containers & Orchestration</h3>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Kubernetes</span>
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">EKS</span>
-                        <span class="tech-badge">AKS</span>
-                        <span class="tech-badge">GKE</span>
-                        <span class="tech-badge">Helm</span>
-                        <span class="tech-badge">Istio</span>
-                    </div>
-                </div>
+            <!-- DevOps -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E" alt="DevOps" class="service-icon">
+                <h3>DevOps & Automation</h3>
+                <p>CI/CD pipelines, Infrastructure as Code, and GitOps implementation. Accelerate delivery with modern DevOps practices.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
 
-                <div class="tech-category">
-                    <h3>⚙️ Infrastructure & Automation</h3>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Terraform</span>
-                        <span class="tech-badge">Ansible</span>
-                        <span class="tech-badge">Pulumi</span>
-                        <span class="tech-badge">CloudFormation</span>
-                        <span class="tech-badge">ARM Templates</span>
-                    </div>
-                </div>
+            <!-- IT Operations -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Crect x='2' y='3' width='20' height='14' rx='2'/%3E%3Cline x1='8' y1='21' x2='16' y2='21'/%3E%3Cline x1='12' y1='17' x2='12' y2='21'/%3E%3C/svg%3E" alt="Operations" class="service-icon">
+                <h3>IT Operations Management</h3>
+                <p>24/7 infrastructure monitoring, incident management, and performance optimization. Ensure maximum uptime and reliability.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
 
-                <div class="tech-category">
-                    <h3>📊 Monitoring & Observability</h3>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Datadog</span>
-                        <span class="tech-badge">New Relic</span>
-                        <span class="tech-badge">Prometheus</span>
-                        <span class="tech-badge">Grafana</span>
-                        <span class="tech-badge">ELK Stack</span>
-                    </div>
-                </div>
+            <!-- IT Staffing -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E" alt="Staffing" class="service-icon">
+                <h3>IT Staffing Solutions</h3>
+                <p>Connect with top-tier cloud engineers, AI specialists, DevOps professionals, and cybersecurity experts for your initiatives.</p>
+                <a href="staffing.html" class="service-link">Learn More</a>
+            </div>
+
+            <!-- Training -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/%3E%3C/svg%3E" alt="Training" class="service-icon">
+                <h3>Corporate Training</h3>
+                <p>Expert-led certification training in AWS, Azure, GCP, AI/ML, Kubernetes, and DevOps. Customized programs for teams.</p>
+                <a href="training.html" class="service-link">Learn More</a>
+            </div>
+
+            <!-- Internships -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpolyline points='22 12 18 12 15 21 9 3 6 12 2 12'/%3E%3C/svg%3E" alt="Internship" class="service-icon">
+                <h3>Internship Programs</h3>
+                <p>Launch your tech career with hands-on experience in cloud, AI, and DevOps. Real-world projects with expert mentorship.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
+
+            <!-- POC -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E" alt="POC" class="service-icon">
+                <h3>Proof of Concept</h3>
+                <p>Rapid POC development for cloud migration, AI/ML prototypes, and containerization pilots. Quick time-to-value in 2-4 weeks.</p>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
+
+            <!-- Cloud Operations Support -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='M12 8v4l2 2'/%3E%3C/svg%3E" alt="Operations Support" class="service-icon">
+                <h3>Cloud Operations Support</h3>
+                <p>24/7 monitoring, incident response, and operational support for your cloud infrastructure across AWS, Azure, and GCP.</p>
+                <a href="operations-support.html" class="service-link">Learn More</a>
+            </div>
+
+            <!-- Cloud Migration -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpolyline points='7.5 4.21 12 6.81 16.5 4.21'/%3E%3Cpolyline points='7.5 19.79 7.5 14.6 3 12'/%3E%3Cpolyline points='21 12 16.5 14.6 16.5 19.79'/%3E%3Cpolyline points='3.27 6.96 12 12.01 20.73 6.96'/%3E%3Cline x1='12' y1='22.08' x2='12' y2='12'/%3E%3C/svg%3E" alt="Migration" class="service-icon">
+                <h3>Cloud Migration Services</h3>
+                <p>End-to-end cloud migration planning and execution. Seamlessly move workloads to AWS, Azure, or GCP with zero downtime.</p>
+                <a href="migration.html" class="service-link">Learn More</a>
+            </div>
+
+            <!-- Managed Services -->
+            <div class="service-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2'%3E%3Crect x='2' y='7' width='20' height='14' rx='2' ry='2'/%3E%3Cpath d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/%3E%3C/svg%3E" alt="Managed Services" class="service-icon">
+                <h3>Managed Cloud Services</h3>
+                <p>Complete cloud infrastructure management. We handle operations, optimization, security, and compliance while you focus on business.</p>
+                <a href="managed-services.html" class="service-link">Learn More</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Opskyra</h2>
-            <div class="about-content">
-                <p>Opskyra is a premier IT consulting firm delivering transformative solutions across multi-cloud environments, artificial intelligence, cybersecurity, and IT operations. With deep expertise spanning AWS, Azure, and Google Cloud Platform, we help organizations navigate the complexities of modern digital infrastructure.</p>
-                
-                <div class="stats">
-                    <div class="stat-card">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Major Cloud Platforms</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support Available</div>
-                    </div>
-                </div>
-
-                <p style="margin-top: 2rem;">Our team of certified experts brings a wealth of experience in cloud architecture, AI/ML engineering, security engineering, and DevOps practices. We partner with organizations to design, implement, and optimize solutions that drive innovation, enhance security, and maximize operational efficiency.</p>
-            </div>
-
-            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #1a1a2e; font-size: 1.8rem;">Certifications & Expertise</h3>
-            <div class="certifications">
-                <div class="cert-badge">
-                    <strong>AWS Solutions Architect</strong>
-                    <p>Professional</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>Azure Solutions Architect</strong>
-                    <p>Expert (AZ-305)</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>Google Cloud Architect</strong>
-                    <p>Professional</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>Certified Kubernetes</strong>
-                    <p>CKA & CKS</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>Azure Security Engineer</strong>
-                    <p>AZ-500</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>AWS Security</strong>
-                    <p>Specialty</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>HashiCorp Terraform</strong>
-                    <p>Associate</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>Azure AI Engineer</strong>
-                    <p>AI-102</p>
-                </div>
-                <div class="cert-badge">
-                    <strong>CISSP</strong>
-                    <p>Security Professional</p>
-                </div>
-            </div>
-        </div>
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h2>Ready to Transform Your Infrastructure?</h2>
+        <p>Let's discuss how we can help your organization achieve its digital transformation goals through our multi-cloud, AI, and security expertise.</p>
+        <a href="/cdn-cgi/l/email-protection#b0d3dfdec4d1d3c4f0dfc0c3dbc9c2d19ed3dfdd" class="cta-button-white">Get in Touch</a>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Email:</strong> <a href="mailto:contact@opskyra.com">contact@opskyra.com</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Location:</strong> Bangalore, India
-                </div>
-                <div class="contact-item">
-                    <strong>Services:</strong> Global Delivery Model
-                </div>
-                <div class="contact-item">
-                    <strong>Availability:</strong> 24/7 Support & Consulting
-                </div>
-                <p style="margin-top: 2rem; font-size: 1.1rem;">Ready to transform your infrastructure with multi-cloud, AI, and security expertise? Let's discuss how we can help your organization achieve its digital transformation goals.</p>
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="logo-transparent.svg" alt="Opskyra" class="footer-logo">
+                <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; line-height: 1.8;">
+                    Premier IT consulting and staffing firm delivering transformative solutions across multi-cloud, AI, cybersecurity, and IT operations.
+                </p>
+                <p style="color: rgba(255,255,255,0.6); margin-top: 1rem; font-size: 0.9rem;">
+                    📍 Kochi, Kerala, India<br>
+                    📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a7975746e7b796e5a756a697163687b34797577">[email&#160;protected]</a><br>
+                    🔗 <a href="https://www.linkedin.com/in/opskyra" style="color: var(--cyan);" target="_blank">LinkedIn</a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="staffing.html">Careers & Staffing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Multi-Cloud Solutions</a></li>
+                    <li><a href="#services">AI & Machine Learning</a></li>
+                    <li><a href="#services">Cybersecurity</a></li>
+                    <li><a href="#services">DevOps & Automation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>More Services</h4>
+                <ul>
+                    <li><a href="staffing.html">IT Staffing</a></li>
+                    <li><a href="#services">Corporate Training</a></li>
+                    <li><a href="#services">Internships</a></li>
+                    <li><a href="#services">POC Development</a></li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 Opskyra. All rights reserved. | Multi-Cloud • AI • Cybersecurity • IT Operations</p>
-    </footer>
-</body>
-</html>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Opskyra. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/opskyra" target="_blank" aria-label="
