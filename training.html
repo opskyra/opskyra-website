@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Opskyra Training Programs - Expert-led courses in Cloud (AWS, Azure, GCP), AI/ML, DevOps, Kubernetes, Cybersecurity, and more with 100% placement assistance.">
+    <title>Training Programs | Opskyra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --dark-blue: #003d7a;
+            --cyan: #00d4ff;
+            --dark-bg: #0a1929;
+            --section-bg: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--section-bg);
+            color: var(--primary-blue);
+            padding-left: 2rem;
+        }
+
+        .cta-nav {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0d2136 100%);
+            color: white;
+            padding: 150px 3rem 80px;
+            margin-top: 73px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        .search-section {
+            background: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .course-code {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .course-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .course-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .course-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .course-details {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: none;
+        }
+
+        .course-details.active {
+            display: block;
+        }
+
+        .syllabus-section h4 {
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .syllabus-section ul {
+            list-style: none;
+            margin-left: 1rem;
+        }
+
+        .syllabus-section ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .syllabus-section ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo.jpg" alt="Opskyra Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Opskyra</span>
+                    <span class="logo-tagline">Run Better in the Cloud</span>
+                </div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html#services">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#services">All Services</a>
+                        <a href="training.html">Training Programs</a>
+                        <a href="staffing.html">IT Staffing</a>
+                        <a href="operations-support.html">Operations Support</a>
+                        <a href="migration.html">Cloud Migration</a>
+                        <a href="managed-services.html">Managed Services</a>
+                    </div>
+                </li>
+                <li><a href="mailto:contact@opskyra.com" class="cta-nav">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Corporate Training Programs</h1>
+        <p>Expert-led training in Cloud, AI/ML, DevOps, Cybersecurity, and modern technologies. Industry-certified instructors with real-world experience.</p>
+    </section>
+
+    <section class="search-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search from 20+ Courses..." onkeyup="filterCourses()">
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="courses-grid" id="coursesGrid">
+            
+            <!-- AWS Solutions Architect -->
+            <div class="course-card" data-course="aws">
+                <span class="course-code">OPS-101</span>
+                <h3>AWS Solutions Architect Training</h3>
+                <p>Master AWS cloud architecture and prepare for AWS Solutions Architect certification with hands-on labs and real-world scenarios.</p>
+                <div class="course-buttons">
+                    <a href="#aws-details" class="btn btn-primary" onclick="showDetails('aws'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Azure Administrator -->
+            <div class="course-card" data-course="azure">
+                <span class="course-code">OPS-102</span>
+                <h3>Microsoft Azure Administrator Training</h3>
+                <p>Comprehensive Azure administration training covering subscriptions, storage, virtual machines, networking, and identity management.</p>
+                <div class="course-buttons">
+                    <a href="#azure-details" class="btn btn-primary" onclick="showDetails('azure'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Google Cloud -->
+            <div class="course-card" data-course="gcp">
+                <span class="course-code">OPS-103</span>
+                <h3>Google Cloud Platform (GCP) Training</h3>
+                <p>Learn GCP fundamentals, compute engine, cloud storage, networking, and prepare for Google Cloud certifications.</p>
+                <div class="course-buttons">
+                    <a href="#gcp-details" class="btn btn-primary" onclick="showDetails('gcp'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Kubernetes -->
+            <div class="course-card" data-course="kubernetes">
+                <span class="course-code">OPS-104</span>
+                <h3>Kubernetes Administration (CKA)</h3>
+                <p>Master container orchestration with Kubernetes. Prepare for Certified Kubernetes Administrator (CKA) certification.</p>
+                <div class="course-buttons">
+                    <a href="#k8s-details" class="btn btn-primary" onclick="showDetails('k8s'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- DevOps -->
+            <div class="course-card" data-course="devops">
+                <span class="course-code">OPS-105</span>
+                <h3>DevOps Engineering Training</h3>
+                <p>Complete DevOps training covering CI/CD, Jenkins, Docker, Kubernetes, Terraform, and GitOps practices.</p>
+                <div class="course-buttons">
+                    <a href="#devops-details" class="btn btn-primary" onclick="showDetails('devops'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Terraform -->
+            <div class="course-card" data-course="terraform">
+                <span class="course-code">OPS-106</span>
+                <h3>Terraform Infrastructure as Code</h3>
+                <p>Learn Infrastructure as Code with Terraform. Multi-cloud provisioning and automation with HashiCorp best practices.</p>
+                <div class="course-buttons">
+                    <a href="#terraform-details" class="btn btn-primary" onclick="showDetails('terraform'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- AI/ML -->
+            <div class="course-card" data-course="aiml">
+                <span class="course-code">OPS-201</span>
+                <h3>AI & Machine Learning Training</h3>
+                <p>Comprehensive AI/ML training with Python, TensorFlow, PyTorch, and real-world ML projects and deployment strategies.</p>
+                <div class="course-buttons">
+                    <a href="#aiml-details" class="btn btn-primary" onclick="showDetails('aiml'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Data Science -->
+            <div class="course-card" data-course="datascience">
+                <span class="course-code">OPS-202</span>
+                <h3>Data Science & Analytics</h3>
+                <p>Master data science fundamentals, statistical analysis, Python, machine learning, and data visualization techniques.</p>
+                <div class="course-buttons">
+                    <a href="#ds-details" class="btn btn-primary" onclick="showDetails('ds'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="course-card" data-course="cybersecurity">
+                <span class="course-code">OPS-301</span>
+                <h3>Cybersecurity Professional Training</h3>
+                <p>Comprehensive cybersecurity training covering network security, ethical hacking, penetration testing, and security frameworks.</p>
+                <div class="course-buttons">
+                    <a href="#cyber-details" class="btn btn-primary" onclick="showDetails('cyber'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Docker -->
+            <div class="course-card" data-course="docker">
+                <span class="course-code">OPS-107</span>
+                <h3>Docker Containerization</h3>
+                <p>Master Docker fundamentals, container lifecycle, Docker Compose, networking, and container security best practices.</p>
+                <div class="course-buttons">
+                    <a href="#docker-details" class="btn btn-primary" onclick="showDetails('docker'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Python -->
+            <div class="course-card" data-course="python">
+                <span class="course-code">OPS-203</span>
+                <h3>Python Programming</h3>
+                <p>Complete Python programming from basics to advanced, including data structures, OOP, libraries, and practical projects.</p>
+                <div class="course-buttons">
+                    <a href="#python-details" class="btn btn-primary" onclick="showDetails('python'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Azure DevOps -->
+            <div class="course-card" data-course="azuredevops">
+                <span class="course-code">OPS-108</span>
+                <h3>Azure DevOps Training</h3>
+                <p>Master Azure DevOps services including Boards, Repos, Pipelines, Test Plans, and Artifacts for complete CI/CD implementation.</p>
+                <div class="course-buttons">
+                    <a href="#azuredevops-details" class="btn btn-primary" onclick="showDetails('azuredevops'); return false;">View Syllabus</a>
+                    <a href="mailto:contact@opskyra.com" class="btn btn-secondary">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- AWS Syllabus Details -->
+        <div id="aws-details" class="course-details">
+            <h2>AWS Solutions Architect Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: AWS Fundamentals</h4>
+                <ul>
+                    <li>Introduction to Cloud Computing</li>
+                    <li>AWS Global Infrastructure</li>
+                    <li>AWS Management Console</li>
+                    <li>AWS CLI and SDKs</li>
+                    <li>AWS Free Tier and Billing</li>
+                </ul>
+
+                <h4>Module 2: Compute Services</h4>
+                <ul>
+                    <li>Amazon EC2 Instances and Instance Types</li>
+                    <li>AMI (Amazon Machine Images)</li>
+                    <li>Auto Scaling Groups</li>
+                    <li>Elastic Load Balancing (ELB, ALB, NLB)</li>
+                    <li>AWS Lambda and Serverless Computing</li>
+                    <li>Elastic Beanstalk</li>
+                </ul>
+
+                <h4>Module 3: Storage Services</h4>
+                <ul>
+                    <li>Amazon S3 (Simple Storage Service)</li>
+                    <li>S3 Storage Classes and Lifecycle Policies</li>
+                    <li>Amazon EBS (Elastic Block Store)</li>
+                    <li>Amazon EFS (Elastic File System)</li>
+                    <li>AWS Storage Gateway</li>
+                    <li>AWS Snow Family</li>
+                </ul>
+
+                <h4>Module 4: Database Services</h4>
+                <ul>
+                    <li>Amazon RDS (Relational Database Service)</li>
+                    <li>Amazon DynamoDB (NoSQL)</li>
+                    <li>Amazon Aurora</li>
+                    <li>Amazon Redshift (Data Warehouse)</li>
+                    <li>Database Migration Service (DMS)</li>
+                </ul>
+
+                <h4>Module 5: Networking & Content Delivery</h4>
+                <ul>
+                    <li>Amazon VPC (Virtual Private Cloud)</li>
+                    <li>Subnets, Route Tables, Internet Gateway</li>
+                    <li>Security Groups and NACLs</li>
+                    <li>VPN and Direct Connect</li>
+                    <li>Amazon Route 53 (DNS)</li>
+                    <li>CloudFront (CDN)</li>
+                </ul>
+
+                <h4>Module 6: Security & Identity</h4>
+                <ul>
+                    <li>AWS IAM (Identity and Access Management)</li>
+                    <li>IAM Users, Groups, Roles, and Policies</li>
+                    <li>AWS Organizations and SCP</li>
+                    <li>AWS KMS (Key Management Service)</li>
+                    <li>AWS Secrets Manager</li>
+                    <li>AWS WAF and Shield</li>
+                </ul>
+
+                <h4>Module 7: Monitoring & Management</h4>
+                <ul>
+                    <li>Amazon CloudWatch</li>
+                    <li>AWS CloudTrail</li>
+                    <li>AWS Config</li>
+                    <li>AWS Systems Manager</li>
+                    <li>AWS Trusted Advisor</li>
+                </ul>
+
+                <h4>Module 8: Architecture Best Practices</h4>
+                <ul>
+                    <li>Well-Architected Framework</li>
+                    <li>High Availability and Fault Tolerance</li>
+                    <li>Disaster Recovery Strategies</li>
+                    <li>Cost Optimization</li>
+                    <li>Security Best Practices</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 8 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> AWS Solutions Architect Associate Prep</p>
+            </div>
+        </div>
+
+        <!-- Azure Administrator Syllabus -->
+        <div id="azure-details" class="course-details">
+            <h2>Microsoft Azure Administrator Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Manage Azure Subscriptions and Resources</h4>
+                <ul>
+                    <li>Manage Azure subscriptions and assign administrator permissions</li>
+                    <li>Configure cost center quotas and tagging</li>
+                    <li>Configure Azure subscription policies</li>
+                    <li>Analyze resource utilization and consumption</li>
+                    <li>Configure diagnostic settings on resources</li>
+                    <li>Create and test alerts</li>
+                    <li>Manage resource groups and RBAC</li>
+                    <li>Create custom roles and assign RBAC</li>
+                </ul>
+
+                <h4>Module 2: Implement and Manage Storage</h4>
+                <ul>
+                    <li>Create and configure storage accounts</li>
+                    <li>Configure network access to storage</li>
+                    <li>Generate shared access signatures (SAS)</li>
+                    <li>Install and use Azure Storage Explorer</li>
+                    <li>Implement Azure storage replication</li>
+                    <li>Configure Azure Blob storage and CDN</li>
+                    <li>Create and configure Azure File Sync</li>
+                    <li>Implement Azure Backup and recovery</li>
+                </ul>
+
+                <h4>Module 3: Deploy and Manage Virtual Machines</h4>
+                <ul>
+                    <li>Create and configure VMs for Windows and Linux</li>
+                    <li>Configure high availability</li>
+                    <li>Configure monitoring, networking, and storage</li>
+                    <li>Deploy and configure scale sets</li>
+                    <li>Automate deployment with ARM templates</li>
+                    <li>Manage Azure VM with PowerShell DSC</li>
+                    <li>Configure VM backups and Azure Site Recovery</li>
+                </ul>
+
+                <h4>Module 4: Configure and Manage Virtual Networks</h4>
+                <ul>
+                    <li>Create and configure VNET peering and VNET-to-VNET</li>
+                    <li>Configure private and public IP addresses</li>
+                    <li>Create and configure Network Security Groups (NSG)</li>
+                    <li>Implement Azure Load Balancer</li>
+                    <li>Configure Azure DNS</li>
+                    <li>Monitor and troubleshoot virtual networking</li>
+                    <li>Integrate on-premises network with Azure VPN</li>
+                    <li>Configure ExpressRoute</li>
+                </ul>
+
+                <h4>Module 5: Manage Identities</h4>
+                <ul>
+                    <li>Manage Azure Active Directory (Azure AD)</li>
+                    <li>Add custom domains and Azure AD Join</li>
+                    <li>Configure self-service password reset</li>
+                    <li>Manage Azure AD objects (users, groups, devices)</li>
+                    <li>Install Azure AD Connect and configure synchronization</li>
+                    <li>Implement Multi-Factor Authentication (MFA)</li>
+                    <li>Configure fraud alerts and bypass options</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 6 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> AZ-104 Exam Prep</p>
+            </div>
+        </div>
+
+        <!-- Kubernetes Syllabus -->
+        <div id="k8s-details" class="course-details">
+            <h2>Kubernetes Administration (CKA) - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Kubernetes Fundamentals</h4>
+                <ul>
+                    <li>Container Orchestration Concepts</li>
+                    <li>Kubernetes Architecture (Master & Worker Nodes)</li>
+                    <li>Kubernetes Components (API Server, etcd, Scheduler, Controller Manager)</li>
+                    <li>kubectl Command Line Tool</li>
+                    <li>Setting up Kubernetes Cluster</li>
+                </ul>
+
+                <h4>Module 2: Core Concepts</h4>
+                <ul>
+                    <li>Pods, ReplicaSets, and Deployments</li>
+                    <li>Services (ClusterIP, NodePort, LoadBalancer)</li>
+                    <li>Namespaces and Resource Quotas</li>
+                    <li>Labels and Selectors</li>
+                    <li>Annotations</li>
+                </ul>
+
+                <h4>Module 3: Configuration</h4>
+                <ul>
+                    <li>ConfigMaps and Secrets</li>
+                    <li>Environment Variables</li>
+                    <li>Security Contexts</li>
+                    <li>Service Accounts</li>
+                    <li>Resource Requirements and Limits</li>
+                </ul>
+
+                <h4>Module 4: Multi-Container Pods</h4>
+                <ul>
+                    <li>Sidecar Pattern</li>
+                    <li>Adapter Pattern</li>
+                    <li>Ambassador Pattern</li>
+                    <li>Init Containers</li>
+                </ul>
+
+                <h4>Module 5: Observability</h4>
+                <ul>
+                    <li>Readiness and Liveness Probes</li>
+                    <li>Container Logging</li>
+                    <li>Monitoring Applications</li>
+                    <li>Debugging in Kubernetes</li>
+                </ul>
+
+                <h4>Module 6: Pod Design</h4>
+                <ul>
+                    <li>Rolling Updates and Rollbacks</li>
+                    <li>Jobs and CronJobs</li>
+                    <li>DaemonSets and StatefulSets</li>
+                </ul>
+
+                <h4>Module 7: Services & Networking</h4>
+                <ul>
+                    <li>Network Policies</li>
+                    <li>Ingress Controllers</li>
+                    <li>Service Mesh Basics (Istio)</li>
+                    <li>DNS for Services and Pods</li>
+                </ul>
+
+                <h4>Module 8: State Persistence</h4>
+                <ul>
+                    <li>Volumes and Persistent Volumes</li>
+                    <li>Persistent Volume Claims</li>
+                    <li>Storage Classes</li>
+                    <li>StatefulSets for Stateful Applications</li>
+                </ul>
+
+                <h4>Module 9: Security</h4>
+                <ul>
+                    <li>Authentication and Authorization</li>
+                    <li>RBAC (Role-Based Access Control)</li>
+                    <li>Network Policies</li>
+                    <li>Pod Security Policies</li>
+                    <li>Image Security</li>
+                </ul>
+
+                <h4>Module 10: Cluster Maintenance</h4>
+                <ul>
+                    <li>Cluster Upgrade Process</li>
+                    <li>Backup and Restore (etcd)</li>
+                    <li>Node Maintenance</li>
+                    <li>Troubleshooting Applications and Clusters</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 6 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> CKA Exam Prep | <strong>Includes:</strong> Hands-on Labs</p>
+            </div>
+        </div>
+
+        <!-- DevOps Syllabus -->
+        <div id="devops-details" class="course-details">
+            <h2>DevOps Engineering Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: DevOps Fundamentals</h4>
+                <ul>
+                    <li>Introduction to DevOps Culture and Practices</li>
+                    <li>DevOps vs Traditional Development</li>
+                    <li>Continuous Integration and Continuous Delivery (CI/CD)</li>
+                    <li>DevOps Tools Ecosystem</li>
+                    <li>Agile and DevOps</li>
+                </ul>
+
+                <h4>Module 2: Version Control with Git</h4>
+                <ul>
+                    <li>Git Fundamentals and Workflow</li>
+                    <li>Branching Strategies (GitFlow, Trunk-Based)</li>
+                    <li>GitHub/GitLab/Bitbucket</li>
+                    <li>Pull Requests and Code Reviews</li>
+                    <li>Git Hooks and Automation</li>
+                </ul>
+
+                <h4>Module 3: CI/CD with Jenkins</h4>
+                <ul>
+                    <li>Jenkins Installation and Configuration</li>
+                    <li>Creating and Managing Jenkins Jobs</li>
+                    <li>Jenkins Pipelines (Declarative & Scripted)</li>
+                    <li>Jenkins Plugins Ecosystem</li>
+                    <li>Integration with Git, Docker, Kubernetes</li>
+                    <li>Jenkins Security and Best Practices</li>
+                </ul>
+
+                <h4>Module 4: Containerization with Docker</h4>
+                <ul>
+                    <li>Docker Architecture and Installation</li>
+                    <li>Docker Images and Containers</li>
+                    <li>Dockerfile Best Practices</li>
+                    <li>Docker Compose for Multi-Container Apps</li>
+                    <li>Docker Networking and Volumes</li>
+                    <li>Docker Registry and Hub</li>
+                </ul>
+
+                <h4>Module 5: Container Orchestration with Kubernetes</h4>
+                <ul>
+                    <li>Kubernetes Fundamentals</li>
+                    <li>Pods, Deployments, Services</li>
+                    <li>ConfigMaps and Secrets</li>
+                    <li>Helm Package Manager</li>
+                    <li>Kubernetes Networking</li>
+                </ul>
+
+                <h4>Module 6: Infrastructure as Code with Terraform</h4>
+                <ul>
+                    <li>Terraform Basics and HCL</li>
+                    <li>Terraform Providers (AWS, Azure, GCP)</li>
+                    <li>Resources and Data Sources</li>
+                    <li>Terraform State Management</li>
+                    <li>Modules and Workspaces</li>
+                    <li>Terraform Cloud</li>
+                </ul>
+
+                <h4>Module 7: Configuration Management</h4>
+                <ul>
+                    <li>Introduction to Ansible</li>
+                    <li>Ansible Playbooks and Roles</li>
+                    <li>Ansible Inventory Management</li>
+                    <li>Ansible Vault for Secrets</li>
+                    <li>Integration with CI/CD Pipelines</li>
+                </ul>
+
+                <h4>Module 8: Monitoring and Logging</h4>
+                <ul>
+                    <li>Prometheus and Grafana</li>
+                    <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+                    <li>Application Performance Monitoring</li>
+                    <li>Alerting and Incident Management</li>
+                </ul>
+
+                <h4>Module 9: Cloud Platforms</h4>
+                <ul>
+                    <li>AWS DevOps Services</li>
+                    <li>Azure DevOps Services</li>
+                    <li>GCP DevOps Tools</li>
+                    <li>Multi-Cloud DevOps Strategies</li>
+                </ul>
+
+                <h4>Module 10: Security and Best Practices</h4>
+                <ul>
+                    <li>DevSecOps Principles</li>
+                    <li>Container Security</li>
+                    <li>Secrets Management</li>
+                    <li>Compliance and Governance</li>
+                    <li>Security Scanning in CI/CD</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 10 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Includes:</strong> Real-world Projects, CI/CD Pipeline Setup</p>
+            </div>
+        </div>
+
+        <!-- AI/ML Syllabus -->
+        <div id="aiml-details" class="course-details">
+            <h2>AI & Machine Learning Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Python for AI/ML</h4>
+                <ul>
+                    <li>Python Fundamentals</li>
+                    <li>NumPy for Numerical Computing</li>
+                    <li>Pandas for Data Manipulation</li>
+                    <li>Matplotlib and Seaborn for Visualization</li>
+                    <li>Jupyter Notebooks</li>
+                </ul>
+
+                <h4>Module 2: Mathematics for Machine Learning</h4>
+                <ul>
+                    <li>Linear Algebra (Vectors, Matrices)</li>
+                    <li>Calculus and Optimization</li>
+                    <li>Probability and Statistics</li>
+                    <li>Statistical Analysis</li>
+                </ul>
+
+                <h4>Module 3: Machine Learning Fundamentals</h4>
+                <ul>
+                    <li>Supervised vs Unsupervised Learning</li>
+                    <li>Model Training and Validation</li>
+                    <li>Overfitting and Underfitting</li>
+                    <li>Cross-Validation Techniques</li>
+                    <li>Feature Engineering</li>
+                </ul>
+
+                <h4>Module 4: Supervised Learning Algorithms</h4>
+                <ul>
+                    <li>Linear and Logistic Regression</li>
+                    <li>Decision Trees and Random Forests</li>
+                    <li>Support Vector Machines (SVM)</li>
+                    <li>K-Nearest Neighbors (KNN)</li>
+                    <li>Naive Bayes Classifier</li>
+                    <li>Ensemble Methods (Bagging, Boosting)</li>
+                </ul>
+
+                <h4>Module 5: Unsupervised Learning</h4>
+                <ul>
+                    <li>K-Means Clustering</li>
+                    <li>Hierarchical Clustering</li>
+                    <li>DBSCAN</li>
+                    <li>Principal Component Analysis (PCA)</li>
+                    <li>Dimensionality Reduction</li>
+                </ul>
+
+                <h4>Module 6: Deep Learning with TensorFlow & Keras</h4>
+                <ul>
+                    <li>Neural Networks Fundamentals</li>
+                    <li>Activation Functions and Backpropagation</li>
+                    <li>Convolutional Neural Networks (CNN)</li>
+                    <li>Recurrent Neural Networks (RNN, LSTM)</li>
+                    <li>Transfer Learning</li>
+                    <li>Model Optimization Techniques</li>
+                </ul>
+
+                <h4>Module 7: Natural Language Processing (NLP)</h4>
+                <ul>
+                    <li>Text Preprocessing and Tokenization</li>
+                    <li>Word Embeddings (Word2Vec, GloVe)</li>
+                    <li>Sentiment Analysis</li>
+                    <li>Named Entity Recognition</li>
+                    <li>Transformers and BERT</li>
+                </ul>
+
+                <h4>Module 8: Computer Vision</h4>
+                <ul>
+                    <li>Image Processing Basics</li>
+                    <li>Object Detection (YOLO, R-CNN)</li>
+                    <li>Image Classification</li>
+                    <li>Face Recognition</li>
+                    <li>Image Segmentation</li>
+                </ul>
+
+                <h4>Module 9: MLOps and Model Deployment</h4>
+                <ul>
+                    <li>Model Versioning and Tracking</li>
+                    <li>MLflow and Model Registry</li>
+                    <li>Docker for ML Models</li>
+                    <li>Model Serving (Flask, FastAPI)</li>
+                    <li>Cloud Deployment (AWS SageMaker, Azure ML)</li>
+                    <li>Model Monitoring and Retraining</li>
+                </ul>
+
+                <h4>Module 10: Real-World Projects</h4>
+                <ul>
+                    <li>End-to-end ML Project Workflow</li>
+                    <li>Recommendation Systems</li>
+                    <li>Time Series Forecasting</li>
+                    <li>Chatbot Development</li>
+                    <li>Image Classification Project</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 12 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Includes:</strong> 5+ Real-world Projects, GPU Access</p>
+            </div>
+        </div>
+
+        <!-- GCP Syllabus -->
+        <div id="gcp-details" class="course-details">
+            <h2>Google Cloud Platform Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: GCP Fundamentals</h4>
+                <ul>
+                    <li>Introduction to Google Cloud Platform</li>
+                    <li>GCP Global Infrastructure</li>
+                    <li>Google Cloud Console and Cloud Shell</li>
+                    <li>gcloud CLI Basics</li>
+                    <li>GCP Projects and Billing</li>
+                </ul>
+
+                <h4>Module 2: Compute Services</h4>
+                <ul>
+                    <li>Google Compute Engine (GCE)</li>
+                    <li>Instance Templates and Groups</li>
+                    <li>Google Kubernetes Engine (GKE)</li>
+                    <li>App Engine for PaaS</li>
+                    <li>Cloud Functions (Serverless)</li>
+                    <li>Cloud Run</li>
+                </ul>
+
+                <h4>Module 3: Storage and Databases</h4>
+                <ul>
+                    <li>Cloud Storage (Buckets and Objects)</li>
+                    <li>Cloud SQL</li>
+                    <li>Cloud Spanner</li>
+                    <li>Cloud Bigtable</li>
+                    <li>Firestore and Datastore</li>
+                </ul>
+
+                <h4>Module 4: Networking</h4>
+                <ul>
+                    <li>VPC Networks and Subnets</li>
+                    <li>Firewall Rules</li>
+                    <li>Cloud Load Balancing</li>
+                    <li>Cloud CDN</li>
+                    <li>Cloud VPN and Interconnect</li>
+                    <li>Cloud DNS</li>
+                </ul>
+
+                <h4>Module 5: Identity and Security</h4>
+                <ul>
+                    <li>Cloud IAM (Identity and Access Management)</li>
+                    <li>Service Accounts</li>
+                    <li>Cloud KMS (Key Management Service)</li>
+                    <li>Security Command Center</li>
+                    <li>VPC Service Controls</li>
+                </ul>
+
+                <h4>Module 6: DevOps on GCP</h4>
+                <ul>
+                    <li>Cloud Build for CI/CD</li>
+                    <li>Container Registry</li>
+                    <li>Cloud Source Repositories</li>
+                    <li>Infrastructure as Code (Deployment Manager)</li>
+                </ul>
+
+                <h4>Module 7: Monitoring and Operations</h4>
+                <ul>
+                    <li>Cloud Monitoring (formerly Stackdriver)</li>
+                    <li>Cloud Logging</li>
+                    <li>Error Reporting</li>
+                    <li>Cloud Trace and Debugger</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 6 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> GCP Associate Cloud Engineer Prep</p>
+            </div>
+        </div>
+
+        <!-- Terraform Syllabus -->
+        <div id="terraform-details" class="course-details">
+            <h2>Terraform Infrastructure as Code - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Terraform Basics</h4>
+                <ul>
+                    <li>Introduction to Infrastructure as Code (IaC)</li>
+                    <li>Installing Terraform</li>
+                    <li>Terraform Workflow (Write, Plan, Apply)</li>
+                    <li>HCL (HashiCorp Configuration Language)</li>
+                    <li>Terraform CLI Commands</li>
+                </ul>
+
+                <h4>Module 2: Terraform Configuration</h4>
+                <ul>
+                    <li>Providers and Resources</li>
+                    <li>Variables and Outputs</li>
+                    <li>Data Sources</li>
+                    <li>Local Values</li>
+                    <li>Expressions and Functions</li>
+                </ul>
+
+                <h4>Module 3: State Management</h4>
+                <ul>
+                    <li>Terraform State Files</li>
+                    <li>Remote State Backend (S3, Azure Blob)</li>
+                    <li>State Locking</li>
+                    <li>State Commands</li>
+                    <li>Import Existing Infrastructure</li>
+                </ul>
+
+                <h4>Module 4: Terraform Modules</h4>
+                <ul>
+                    <li>Creating Reusable Modules</li>
+                    <li>Module Inputs and Outputs</li>
+                    <li>Module Sources (Local, Git, Registry)</li>
+                    <li>Module Versioning</li>
+                    <li>Terraform Registry</li>
+                </ul>
+
+                <h4>Module 5: Multi-Cloud Provisioning</h4>
+                <ul>
+                    <li>AWS Infrastructure with Terraform</li>
+                    <li>Azure Infrastructure with Terraform</li>
+                    <li>GCP Infrastructure with Terraform</li>
+                    <li>Multi-Cloud Strategies</li>
+                </ul>
+
+                <h4>Module 6: Advanced Terraform</h4>
+                <ul>
+                    <li>Workspaces for Environment Management</li>
+                    <li>Dynamic Blocks</li>
+                    <li>Count and For_Each</li>
+                    <li>Conditional Expressions</li>
+                    <li>Terraform Graph</li>
+                </ul>
+
+                <h4>Module 7: Terraform in CI/CD</h4>
+                <ul>
+                    <li>Integrating Terraform with Jenkins</li>
+                    <li>GitOps with Terraform</li>
+                    <li>Terraform Cloud and Enterprise</li>
+                    <li>Automated Testing for Terraform</li>
+                </ul>
+
+                <h4>Module 8: Best Practices and Security</h4>
+                <ul>
+                    <li>Terraform Code Organization</li>
+                    <li>Security Best Practices</li>
+                    <li>Secret Management</li>
+                    <li>Cost Optimization</li>
+                    <li>Troubleshooting Common Issues</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 4 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> HashiCorp Terraform Associate Prep</p>
+            </div>
+        </div>
+
+        <!-- Cybersecurity Syllabus -->
+        <div id="cyber-details" class="course-details">
+            <h2>Cybersecurity Professional Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Cybersecurity Fundamentals</h4>
+                <ul>
+                    <li>Introduction to Cybersecurity</li>
+                    <li>CIA Triad (Confidentiality, Integrity, Availability)</li>
+                    <li>Threat Landscape and Attack Vectors</li>
+                    <li>Security Frameworks (NIST, ISO 27001)</li>
+                    <li>Risk Management</li>
+                </ul>
+
+                <h4>Module 2: Network Security</h4>
+                <ul>
+                    <li>TCP/IP and OSI Model</li>
+                    <li>Firewall Configuration and Management</li>
+                    <li>IDS/IPS (Intrusion Detection/Prevention)</li>
+                    <li>VPN Technologies</li>
+                    <li>Network Segmentation</li>
+                    <li>Wireless Security</li>
+                </ul>
+
+                <h4>Module 3: Ethical Hacking and Penetration Testing</h4>
+                <ul>
+                    <li>Reconnaissance and Information Gathering</li>
+                    <li>Scanning and Enumeration</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Exploitation Techniques</li>
+                    <li>Post-Exploitation</li>
+                    <li>Reporting and Documentation</li>
+                </ul>
+
+                <h4>Module 4: Web Application Security</h4>
+                <ul>
+                    <li>OWASP Top 10 Vulnerabilities</li>
+                    <li>SQL Injection and XSS</li>
+                    <li>CSRF and Session Management</li>
+                    <li>API Security</li>
+                    <li>Web Application Firewalls (WAF)</li>
+                </ul>
+
+                <h4>Module 5: Cloud Security</h4>
+                <ul>
+                    <li>AWS Security Best Practices</li>
+                    <li>Azure Security Center</li>
+                    <li>GCP Security Command Center</li>
+                    <li>Cloud IAM and Identity Management</li>
+                    <li>Data Encryption in Cloud</li>
+                    <li>Cloud Compliance (SOC 2, HIPAA, GDPR)</li>
+                </ul>
+
+                <h4>Module 6: Security Tools</h4>
+                <ul>
+                    <li>Nmap for Network Scanning</li>
+                    <li>Wireshark for Packet Analysis</li>
+                    <li>Metasploit Framework</li>
+                    <li>Burp Suite for Web Testing</li>
+                    <li>Nessus for Vulnerability Scanning</li>
+                    <li>SIEM Tools (Splunk, ELK)</li>
+                </ul>
+
+                <h4>Module 7: Incident Response and Forensics</h4>
+                <ul>
+                    <li>Incident Response Lifecycle</li>
+                    <li>Digital Forensics Fundamentals</li>
+                    <li>Log Analysis</li>
+                    <li>Malware Analysis Basics</li>
+                    <li>Threat Intelligence</li>
+                </ul>
+
+                <h4>Module 8: Compliance and Governance</h4>
+                <ul>
+                    <li>Security Policies and Procedures</li>
+                    <li>Compliance Requirements (PCI DSS, HIPAA)</li>
+                    <li>Security Auditing</li>
+                    <li>Governance Frameworks</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 10 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> CEH/CompTIA Security+ Prep</p>
+            </div>
+        </div>
+
+        <!-- Data Science Syllabus -->
+        <div id="ds-details" class="course-details">
+            <h2>Data Science & Analytics - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Python for Data Science</h4>
+                <ul>
+                    <li>Python Programming Basics</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>NumPy for Numerical Computing</li>
+                    <li>Pandas for Data Analysis</li>
+                    <li>File Handling (CSV, JSON, Excel)</li>
+                </ul>
+
+                <h4>Module 2: Data Visualization</h4>
+                <ul>
+                    <li>Matplotlib for Plotting</li>
+                    <li>Seaborn for Statistical Visualization</li>
+                    <li>Plotly for Interactive Charts</li>
+                    <li>Dashboard Creation</li>
+                    <li>Power BI/Tableau Integration</li>
+                </ul>
+
+                <h4>Module 3: Statistics for Data Science</h4>
+                <ul>
+                    <li>Descriptive Statistics</li>
+                    <li>Probability Distributions</li>
+                    <li>Hypothesis Testing</li>
+                    <li>Correlation and Regression Analysis</li>
+                    <li>A/B Testing</li>
+                </ul>
+
+                <h4>Module 4: SQL and Databases</h4>
+                <ul>
+                    <li>SQL Fundamentals (SELECT, JOIN, WHERE)</li>
+                    <li>Advanced SQL Queries</li>
+                    <li>Database Design and Normalization</li>
+                    <li>PostgreSQL/MySQL</li>
+                    <li>NoSQL Databases (MongoDB)</li>
+                </ul>
+
+                <h4>Module 5: Machine Learning</h4>
+                <ul>
+                    <li>Supervised Learning Algorithms</li>
+                    <li>Unsupervised Learning (Clustering)</li>
+                    <li>Model Selection and Evaluation</li>
+                    <li>Scikit-learn Library</li>
+                    <li>Feature Engineering</li>
+                </ul>
+
+                <h4>Module 6: Big Data Technologies</h4>
+                <ul>
+                    <li>Introduction to Big Data</li>
+                    <li>Hadoop Ecosystem</li>
+                    <li>Apache Spark for Data Processing</li>
+                    <li>PySpark</li>
+                    <li>Data Lakes vs Data Warehouses</li>
+                </ul>
+
+                <h4>Module 7: Data Engineering</h4>
+                <ul>
+                    <li>ETL Processes</li>
+                    <li>Data Pipelines</li>
+                    <li>Apache Airflow</li>
+                    <li>Data Quality and Validation</li>
+                    <li>Cloud Data Platforms</li>
+                </ul>
+
+                <h4>Module 8: Business Intelligence</h4>
+                <ul>
+                    <li>BI Concepts and Tools</li>
+                    <li>Power BI/Tableau</li>
+                    <li>Creating Dashboards and Reports</li>
+                    <li>Data Storytelling</li>
+                    <li>KPIs and Metrics</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 10 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Includes:</strong> Industry Projects, Placement Assistance</p>
+            </div>
+        </div>
+
+        <!-- Docker Syllabus -->
+        <div id="docker-details" class="course-details">
+            <h2>Docker Containerization - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Docker Fundamentals</h4>
+                <ul>
+                    <li>Introduction to Containerization</li>
+                    <li>Docker vs Virtual Machines</li>
+                    <li>Docker Architecture</li>
+                    <li>Installing Docker</li>
+                    <li>Docker CLI Basics</li>
+                </ul>
+
+                <h4>Module 2: Working with Images</h4>
+                <ul>
+                    <li>Docker Images and Layers</li>
+                    <li>Pulling Images from Docker Hub</li>
+                    <li>Creating Custom Images</li>
+                    <li>Dockerfile Best Practices</li>
+                    <li>Multi-stage Builds</li>
+                    <li>Image Optimization</li>
+                </ul>
+
+                <h4>Module 3: Container Management</h4>
+                <ul>
+                    <li>Running and Managing Containers</li>
+                    <li>Container Lifecycle</li>
+                    <li>Port Mapping and Environment Variables</li>
+                    <li>Container Logs and Debugging</li>
+                    <li>Resource Limits</li>
+                </ul>
+
+                <h4>Module 4: Docker Networking</h4>
+                <ul>
+                    <li>Network Types (Bridge, Host, None)</li>
+                    <li>Custom Networks</li>
+                    <li>Container Communication</li>
+                    <li>DNS and Service Discovery</li>
+                </ul>
+
+                <h4>Module 5: Data Management</h4>
+                <ul>
+                    <li>Docker Volumes</li>
+                    <li>Bind Mounts</li>
+                    <li>Data Persistence</li>
+                    <li>Volume Drivers</li>
+                </ul>
+
+                <h4>Module 6: Docker Compose</h4>
+                <ul>
+                    <li>docker-compose.yml Syntax</li>
+                    <li>Multi-Container Applications</li>
+                    <li>Service Dependencies</li>
+                    <li>Scaling Services</li>
+                    <li>Environment-Specific Configurations</li>
+                </ul>
+
+                <h4>Module 7: Docker Security</h4>
+                <ul>
+                    <li>Container Security Best Practices</li>
+                    <li>Image Scanning</li>
+                    <li>User Namespaces</li>
+                    <li>Security Scanning Tools</li>
+                    <li>Docker Bench Security</li>
+                </ul>
+
+                <h4>Module 8: Docker in Production</h4>
+                <ul>
+                    <li>Container Orchestration Overview</li>
+                    <li>Docker Swarm Basics</li>
+                    <li>Docker Registry (Private)</li>
+                    <li>Monitoring Containers</li>
+                    <li>CI/CD Integration</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 4 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Includes:</strong> Hands-on Labs</p>
+            </div>
+        </div>
+
+        <!-- Python Syllabus -->
+        <div id="python-details" class="course-details">
+            <h2>Python Programming - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Python Basics</h4>
+                <ul>
+                    <li>Introduction to Python</li>
+                    <li>Installing Python and IDE Setup</li>
+                    <li>Variables and Data Types</li>
+                    <li>Operators (Arithmetic, Logical, Comparison)</li>
+                    <li>Input and Output</li>
+                    <li>Comments and Documentation</li>
+                </ul>
+
+                <h4>Module 2: Control Flow</h4>
+                <ul>
+                    <li>Conditional Statements (if, elif, else)</li>
+                    <li>Loops (for, while)</li>
+                    <li>Break, Continue, Pass</li>
+                    <li>List Comprehensions</li>
+                </ul>
+
+                <h4>Module 3: Data Structures</h4>
+                <ul>
+                    <li>Lists and Tuples</li>
+                    <li>Dictionaries and Sets</li>
+                    <li>String Operations and Methods</li>
+                    <li>Collections Module</li>
+                </ul>
+
+                <h4>Module 4: Functions</h4>
+                <ul>
+                    <li>Defining and Calling Functions</li>
+                    <li>Parameters and Return Values</li>
+                    <li>Lambda Functions</li>
+                    <li>Map, Filter, Reduce</li>
+                    <li>Decorators</li>
+                    <li>Generators</li>
+                </ul>
+
+                <h4>Module 5: Object-Oriented Programming</h4>
+                <ul>
+                    <li>Classes and Objects</li>
+                    <li>Inheritance and Polymorphism</li>
+                    <li>Encapsulation and Abstraction</li>
+                    <li>Magic Methods</li>
+                    <li>Property Decorators</li>
+                </ul>
+
+                <h4>Module 6: File Handling</h4>
+                <ul>
+                    <li>Reading and Writing Files</li>
+                    <li>Working with CSV Files</li>
+                    <li>JSON Data Handling</li>
+                    <li>Excel File Operations</li>
+                </ul>
+
+                <h4>Module 7: Exception Handling</h4>
+                <ul>
+                    <li>Try-Except Blocks</li>
+                    <li>Custom Exceptions</li>
+                    <li>Finally Clause</li>
+                    <li>Debugging Techniques</li>
+                </ul>
+
+                <h4>Module 8: Modules and Packages</h4>
+                <ul>
+                    <li>Importing Modules</li>
+                    <li>Creating Custom Modules</li>
+                    <li>pip and Package Management</li>
+                    <li>Virtual Environments</li>
+                </ul>
+
+                <h4>Module 9: Popular Libraries</h4>
+                <ul>
+                    <li>NumPy for Numerical Computing</li>
+                    <li>Pandas for Data Analysis</li>
+                    <li>Matplotlib for Visualization</li>
+                    <li>Requests for HTTP</li>
+                    <li>Beautiful Soup for Web Scraping</li>
+                </ul>
+
+                <h4>Module 10: Real-World Projects</h4>
+                <ul>
+                    <li>Web Scraping Project</li>
+                    <li>Data Analysis Project</li>
+                    <li>Automation Scripts</li>
+                    <li>API Integration Project</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 8 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Includes:</strong> 4+ Projects, Career Support</p>
+            </div>
+        </div>
+
+        <!-- Azure DevOps Syllabus -->
+        <div id="azuredevops-details" class="course-details">
+            <h2>Azure DevOps Training - Detailed Syllabus</h2>
+            <div class="syllabus-section">
+                <h4>Module 1: Azure DevOps Overview</h4>
+                <ul>
+                    <li>Introduction to Azure DevOps Services</li>
+                    <li>DevOps Culture and Practices</li>
+                    <li>Azure DevOps vs Traditional Tools</li>
+                    <li>Creating Azure DevOps Organization</li>
+                </ul>
+
+                <h4>Module 2: Azure Boards</h4>
+                <ul>
+                    <li>Work Items and Backlogs</li>
+                    <li>Sprints and Iteration Planning</li>
+                    <li>Kanban Boards</li>
+                    <li>Queries and Dashboards</li>
+                    <li>Agile Planning Tools</li>
+                </ul>
+
+                <h4>Module 3: Azure Repos</h4>
+                <ul>
+                    <li>Git Version Control</li>
+                    <li>Branching Strategies</li>
+                    <li>Pull Requests and Code Reviews</li>
+                    <li>Branch Policies</li>
+                    <li>Git Workflows in Azure Repos</li>
+                </ul>
+
+                <h4>Module 4: Azure Pipelines (CI/CD)</h4>
+                <ul>
+                    <li>Creating Build Pipelines</li>
+                    <li>YAML Pipelines</li>
+                    <li>Classic Editor Pipelines</li>
+                    <li>Pipeline Triggers and Schedules</li>
+                    <li>Build Agents (Microsoft-hosted vs Self-hosted)</li>
+                    <li>Release Pipelines and Deployment</li>
+                    <li>Multi-Stage Deployments</li>
+                    <li>Deployment Gates and Approvals</li>
+                </ul>
+
+                <h4>Module 5: Azure Test Plans</h4>
+                <ul>
+                    <li>Test Cases and Test Suites</li>
+                    <li>Manual Testing</li>
+                    <li>Automated Testing Integration</li>
+                    <li>Test Execution and Reporting</li>
+                </ul>
+
+                <h4>Module 6: Azure Artifacts</h4>
+                <ul>
+                    <li>Package Management</li>
+                    <li>Creating and Publishing Packages</li>
+                    <li>Upstream Sources</li>
+                    <li>Feed Management</li>
+                </ul>
+
+                <h4>Module 7: Infrastructure as Code</h4>
+                <ul>
+                    <li>ARM Templates</li>
+                    <li>Bicep for Azure IaC</li>
+                    <li>Terraform with Azure</li>
+                    <li>Pipeline Integration</li>
+                </ul>
+
+                <h4>Module 8: Monitoring and Logging</h4>
+                <ul>
+                    <li>Azure Monitor Integration</li>
+                    <li>Application Insights</li>
+                    <li>Log Analytics</li>
+                    <li>Pipeline Analytics</li>
+                </ul>
+
+                <p style="margin-top: 2rem;"><strong>Duration:</strong> 6 Weeks | <strong>Mode:</strong> Online & Classroom | <strong>Certification:</strong> AZ-400 Exam Prep</p>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="cta-section">
+        <h2>Ready to Upskill Your Team?</h2>
+        <p>Contact us for customized corporate training programs tailored to your organization's needs.</p>
+        <a href="mailto:contact@opskyra.com" class="btn btn-primary" style="background: white; color: var(--primary-blue); padding: 1rem 2.5rem; font-size: 1.1rem;">Get in Touch</a>
+    </section>
+
+    <footer>
+        <img src="logo.jpg" alt="Opskyra" style="width: 50px; margin-bottom: 1rem;">
+        <p>&copy; 2025 Opskyra. All rights reserved.</p>
+        <p style="margin-top: 1rem;">
+            <a href="mailto:contact@opskyra.com">Email</a> |
+            <a href="https://www.linkedin.com/in/opskyra" target="_blank">LinkedIn</a> |
+            <a href="index.html">Home</a>
+        </p>
+    </footer>
+
+    <script>
+        function showDetails(courseId) {
+            // Hide all details
+            document.querySelectorAll('.course-details').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected course details
+            const detailsMap = {
+                'aws': 'aws-details',
+                'azure': 'azure-details',
+                'gcp': 'gcp-details',
+                'k8s': 'k8s-details',
+                'devops': 'devops-details',
+                'terraform': 'terraform-details',
+                'aiml': 'aiml-details',
+                'ds': 'ds-details',
+                'cyber': 'cyber-details',
+                'docker': 'docker-details',
+                'python': 'python-details',
+                'azuredevops': 'azuredevops-details'
+            };
+            
+            const detailId = detailsMap[courseId];
+            if (detailId) {
+                document.getElementById(detailId).classList.add('active');
+                document.getElementById(detailId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function filterCourses() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const cards = document.querySelectorAll('.course-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

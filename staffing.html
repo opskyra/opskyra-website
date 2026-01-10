@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Opskyra IT Staffing - Connect with top-tier cloud engineers, AI specialists, DevOps professionals, and cybersecurity experts for your technology initiatives.">
+    <title>IT Staffing Solutions | Opskyra</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%230078d4' rx='8'/%3E%3Cg transform='translate(32, 32)'%3E%3Cellipse cx='-10' cy='-10' rx='8' ry='6' fill='%23ffffff' opacity='0.9'/%3E%3Cellipse cx='0' cy='-12' rx='10' ry='8' fill='%23ffffff' opacity='0.95'/%3E%3Cellipse cx='10' cy='-10' rx='8' ry='6' fill='%23ffffff' opacity='0.9'/%3E%3Crect x='-12' y='-8' width='24' height='5' rx='2' fill='%23ffffff' opacity='0.95'/%3E%3Ccircle cx='-6' cy='2' r='2.5' fill='%23ffffff'/%3E%3Ccircle cx='6' cy='2' r='2.5' fill='%23ffffff'/%3E%3Ccircle cx='0' cy='8' r='3' fill='%23ffffff'/%3E%3Cline x1='-6' y1='2' x2='6' y2='2' stroke='%23ffffff' stroke-width='1.5' opacity='0.7'/%3E%3Cline x1='-6' y1='2' x2='0' y2='8' stroke='%23ffffff' stroke-width='1.5' opacity='0.7'/%3E%3Cline x1='6' y1='2' x2='0' y2='8' stroke='%23ffffff' stroke-width='1.5' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            height: 50px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #16213e;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background: #1a1a2e;
+            color: #00d4ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f72585 0%, #b5179e 50%, #7209b7 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #f72585;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .intro {
+            background: white;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .roles {
+            background: #f8f9fa;
+        }
+
+        .roles h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 3rem;
+        }
+
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .role-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #f72585;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .role-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .role-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .role-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .role-card ul li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .role-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #f72585;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .benefits {
+            background: white;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: #666;
+        }
+
+        .process {
+            background: #f8f9fa;
+        }
+
+        .process h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f72585, #7209b7);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #f72585 0%, #7209b7 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            background: white;
+            color: #f72585;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .cta-btn-primary:hover,
+        .cta-btn-secondary:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-btn-secondary:hover {
+            background: white;
+            color: #f72585;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .roles-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="Opskyra Logo" style="width: 50px; height: 50px; margin-right: 12px; filter: brightness(1.1);">
+                <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: white;">Opskyra</span>
+                    <span style="font-size: 0.7rem; color: #00d4ff; font-weight: 400; letter-spacing: 1px; margin-top: -2px;">Run Better in the Cloud</span>
+                </div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html#services">Services</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#services">All Services</a>
+                        <a href="training.html">Training Programs</a>
+                        <a href="staffing.html">IT Staffing</a>
+                        <a href="operations-support.html">Operations Support</a>
+                        <a href="migration.html">Cloud Migration</a>
+                        <a href="managed-services.html">Managed Services</a>
+                    </div>
+                </li>
+                <li><a href="mailto:contact@opskyra.com">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>IT Staffing Solutions</h1>
+        <p>Connect with Top-Tier Technology Talent</p>
+        <a href="#contact" class="cta-button">Find Your Next Hire</a>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Building Teams That Drive Innovation</h2>
+            <p>At Opskyra, we understand that exceptional technology talent is the foundation of digital transformation. Our IT staffing solutions connect you with certified professionals who possess the skills, experience, and passion to elevate your cloud, AI, and technology initiatives.</p>
+            <p>Whether you need contract specialists for a critical project or permanent hires to strengthen your team, we deliver pre-vetted, highly qualified candidates who align with your technical requirements and company culture.</p>
+        </div>
+    </section>
+
+    <section class="roles">
+        <div class="container">
+            <h2>Specialized Roles We Fill</h2>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon">☁️</div>
+                    <h3>Cloud Engineers & Architects</h3>
+                    <p>Expert professionals to design, build, and optimize your cloud infrastructure.</p>
+                    <ul>
+                        <li>AWS Solutions Architects</li>
+                        <li>Azure Cloud Engineers</li>
+                        <li>Google Cloud Platform Specialists</li>
+                        <li>Multi-Cloud Architects</li>
+                        <li>Cloud Security Engineers</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon">🤖</div>
+                    <h3>AI/ML Specialists</h3>
+                    <p>Data scientists and ML engineers to drive your AI initiatives forward.</p>
+                    <ul>
+                        <li>Machine Learning Engineers</li>
+                        <li>Data Scientists</li>
+                        <li>AI Architects</li>
+                        <li>NLP Specialists</li>
+                        <li>MLOps Engineers</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon">🚀</div>
+                    <h3>DevOps & SRE Professionals</h3>
+                    <p>Automation experts to streamline your development and operations.</p>
+                    <ul>
+                        <li>DevOps Engineers</li>
+                        <li>Site Reliability Engineers (SRE)</li>
+                        <li>CI/CD Specialists</li>
+                        <li>Platform Engineers</li>
+                        <li>Infrastructure Automation Experts</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon">🔒</div>
+                    <h3>Cybersecurity Experts</h3>
+                    <p>Security professionals to protect your infrastructure and data.</p>
+                    <ul>
+                        <li>Security Architects</li>
+                        <li>Penetration Testers</li>
+                        <li>Security Operations Analysts</li>
+                        <li>Compliance Specialists</li>
+                        <li>Cloud Security Engineers</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon">⚙️</div>
+                    <h3>Infrastructure Engineers</h3>
+                    <p>Skilled engineers to maintain and optimize your IT infrastructure.</p>
+                    <ul>
+                        <li>Systems Engineers</li>
+                        <li>Network Engineers</li>
+                        <li>Database Administrators</li>
+                        <li>Kubernetes Administrators</li>
+                        <li>IT Operations Managers</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon">📊</div>
+                    <h3>Data Engineers & Analysts</h3>
+                    <p>Data professionals to unlock insights from your information assets.</p>
+                    <ul>
+                        <li>Data Engineers</li>
+                        <li>Data Analysts</li>
+                        <li>BI Developers</li>
+                        <li>Data Architects</li>
+                        <li>ETL Specialists</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Choose Opskyra for IT Staffing?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Pre-Vetted Talent</h3>
+                    <p>Every candidate is thoroughly screened for technical skills, certifications, and cultural fit before introduction.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Quick Turnaround</h3>
+                    <p>Our extensive network allows us to present qualified candidates within days, not weeks.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Industry Expertise</h3>
+                    <p>Deep understanding of cloud, AI, DevOps, and cybersecurity domains ensures perfect matches.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Flexible Engagement</h3>
+                    <p>Contract, contract-to-hire, or permanent placements to suit your needs and budget.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Quality Guarantee</h3>
+                    <p>Replacement guarantee ensures you get the right fit for your team and project.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>Access to talent across India and internationally for remote or on-site positions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2>Our Staffing Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Understand Your Needs</h3>
+                    <p>We discuss your technical requirements, team culture, and project timeline in detail.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Source & Screen</h3>
+                    <p>Leverage our network to identify candidates, then rigorously screen for technical skills and cultural fit.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Present Candidates</h3>
+                    <p>Share detailed profiles of pre-vetted candidates who meet your exact criteria.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Facilitate Interviews</h3>
+                    <p>Coordinate technical interviews and provide feedback throughout the selection process.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Onboard & Support</h3>
+                    <p>Assist with offer negotiation, onboarding, and provide ongoing support to ensure success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Build Your Dream Team?</h2>
+            <p>Let's discuss your staffing needs and connect you with exceptional IT talent.</p>
+            <div class="cta-buttons">
+                <a href="/cdn-cgi/l/email-protection#6f340a020e06034f1f1d001b0a0c1b0a0b32" class="cta-btn-primary">Contact Us</a>
+                <a href="index.html#about" class="cta-btn-secondary">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Opskyra. All rights reserved. | Multi-Cloud • AI • Cybersecurity • IT Operations • Staffing</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/cdn-cgi/l/email-protection#bce7d9d1ddd5d09cccced3c8d9dfc8d9d8e1">Email</a> |
+            <a href="https://www.linkedin.com/in/opskyra" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+    
