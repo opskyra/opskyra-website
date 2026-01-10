@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Opskyra Cloud Operations Support - 24/7 monitoring, incident response, and operational excellence for AWS, Azure, and GCP infrastructures.">
+    <title>Cloud Operations Support | Opskyra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --dark-blue: #003d7a;
+            --cyan: #00d4ff;
+            --dark-bg: #0a1929;
+            --section-bg: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--section-bg);
+            color: var(--primary-blue);
+        }
+
+        .cta-nav {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #06a77d 0%, #048a66 100%);
+            color: white;
+            padding: 150px 3rem 80px;
+            margin-top: 73px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .intro {
+            background: white;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .intro p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .features {
+            background: var(--section-bg);
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #06a77d;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .feature-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #06a77d;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo.jpg" alt="Opskyra Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Opskyra</span>
+                    <span class="logo-tagline">Run Better in the Cloud</span>
+                </div>
+            </a>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html#services">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#services">All Services</a>
+                        <a href="training.html">Training Programs</a>
+                        <a href="staffing.html">IT Staffing</a>
+                        <a href="operations-support.html">Operations Support</a>
+                        <a href="migration.html">Cloud Migration</a>
+                        <a href="managed-services.html">Managed Services</a>
+                    </div>
+                </li>
+                <li><a href="mailto:contact@opskyra.com" class="cta-nav">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cloud Operations Support</h1>
+        <p>24/7 Monitoring, Incident Response & Operational Excellence</p>
+    </section>
+
+    <div class="container intro">
+        <h2>Always-On Cloud Operations</h2>
+        <p>Your cloud infrastructure demands constant vigilance and expert care. Opskyra's Cloud Operations Support services provide round-the-clock monitoring, proactive incident management, and operational excellence across AWS, Azure, and Google Cloud Platform.</p>
+        
+        <p>Our certified cloud engineers ensure your infrastructure runs smoothly, securely, and efficiently—24 hours a day, 365 days a year. We handle the complexity of cloud operations so your team can focus on innovation and business growth.</p>
+        
+        <p>With Opskyra as your cloud operations partner, you get peace of mind knowing that industry experts are continuously monitoring, optimizing, and protecting your critical cloud workloads.</p>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2>What We Provide</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔍 24/7 Infrastructure Monitoring</h3>
+                    <ul>
+                        <li>Real-time monitoring of cloud resources</li>
+                        <li>Performance metrics tracking</li>
+                        <li>Availability and uptime monitoring</li>
+                        <li>Resource utilization tracking</li>
+                        <li>Custom dashboards and reporting</li>
+                        <li>Proactive alerting and notifications</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🚨 Incident Management</h3>
+                    <ul>
+                        <li>24/7 incident response team</li>
+                        <li>Rapid issue detection and resolution</li>
+                        <li>Root cause analysis</li>
+                        <li>Incident documentation and reporting</li>
+                        <li>Post-incident reviews</li>
+                        <li>Continuous improvement processes</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>⚡ Performance Optimization</h3>
+                    <ul>
+                        <li>Resource right-sizing recommendations</li>
+                        <li>Cost optimization analysis</li>
+                        <li>Performance tuning</li>
+                        <li>Capacity planning</li>
+                        <li>Bottleneck identification</li>
+                        <li>Scalability improvements</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔒 Security Operations</h3>
+                    <ul>
+                        <li>Security monitoring and threat detection</li>
+                        <li>Compliance monitoring</li>
+                        <li>Vulnerability scanning</li>
+                        <li>Security patch management</li>
+                        <li>Access control management</li>
+                        <li>Security incident response</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔄 Backup & Disaster Recovery</h3>
+                    <ul>
+                        <li>Automated backup management</li>
+                        <li>Backup verification and testing</li>
+                        <li>Disaster recovery planning</li>
+                        <li>DR drills and testing</li>
+                        <li>RTO/RPO compliance</li>
+                        <li>Business continuity support</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📊 Reporting & Analytics</h3>
+                    <ul>
+                        <li>Monthly operational reports</li>
+                        <li>SLA compliance reporting</li>
+                        <li>Cost analysis and trends</li>
+                        <li>Capacity forecasting</li>
+                        <li>Custom reporting dashboards</li>
+                        <li>Executive summaries</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🛠️ Change Management</h3>
+                    <ul>
+                        <li>Structured change approval process</li>
+                        <li>Change implementation</li>
+                        <li>Rollback procedures</li>
+                        <li>Change documentation</li>
+                        <li>Risk assessment</li>
+                        <li>Post-change validation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>💡 Continuous Improvement</h3>
+                    <ul>
+                        <li>Regular infrastructure reviews</li>
+                        <li>Optimization recommendations</li>
+                        <li>Best practices implementation</li>
+                        <li>Technology upgrade planning</li>
+                        <li>Knowledge transfer sessions</li>
+                        <li>Documentation updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2>Our Support Model</h2>
+        <p><strong>Tiered Support Structure:</strong></p>
+        <p><strong>Level 1 (L1):</strong> Initial incident triage, basic troubleshooting, ticket creation, and escalation management.</p>
+        <p><strong>Level 2 (L2):</strong> In-depth technical analysis, complex issue resolution, performance tuning, and configuration management.</p>
+        <p><strong>Level 3 (L3):</strong> Senior architects for critical incidents, architectural decisions, capacity planning, and strategic guidance.</p>
+        
+        <p style="margin-top: 2rem;"><strong>SLA Commitments:</strong></p>
+        <ul style="list-style: none; margin-left: 0;">
+            <li style="padding: 0.5rem 0;">✓ <strong>Critical (P1):</strong> 15-minute response time, 4-hour resolution target</li>
+            <li style="padding: 0.5rem 0;">✓ <strong>High (P2):</strong> 1-hour response time, 8-hour resolution target</li>
+            <li style="padding: 0.5rem 0;">✓ <strong>Medium (P3):</strong> 4-hour response time, 24-hour resolution target</li>
+            <li style="padding: 0.5rem 0;">✓ <strong>Low (P4):</strong> 8-hour response time, 48-hour resolution target</li>
+        </ul>
+
+        <p style="margin-top: 2rem;"><strong>Supported Platforms:</strong></p>
+        <p>Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), Hybrid and Multi-Cloud Environments</p>
+    </div>
+
+    <section class="cta-section">
+        <h2>Need Reliable Cloud Operations Support?</h2>
+        <p>Let our expert team handle your cloud operations while you focus on growing your business.</p>
+        <a href="mailto:contact@opskyra.com" class="cta-button">Get Started Today</a>
+    </section>
+
+    <footer>
+        <img src="logo.jpg" alt="Opskyra" style="width: 50px; margin-bottom: 1rem;">
+        <p>&copy; 2025 Opskyra. All rights reserved.</p>
+        <p style="margin-top: 1rem;">
+            <a href="mailto:contact@opskyra.com">Email</a> |
+            <a href="https://www.linkedin.com/in/opskyra" target="_blank">LinkedIn</a> |
+            <a href="index.html">Home</a>
+        </p>
+    </footer>
+</body>
+</html>
