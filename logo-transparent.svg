@@ -1,0 +1,41 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- No background - transparent -->
+  
+  <!-- Network circuit logo with cyan/blue glow -->
+  <g transform="translate(200, 200)">
+    
+    <!-- Top node -->
+    <circle cx="0" cy="-140" r="24" fill="none" stroke="#00d4ff" stroke-width="8"/>
+    <circle cx="0" cy="-140" r="10" fill="#00d4ff"/>
+    <line x1="-80" y1="-140" x2="-30" y2="-140" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    <line x1="30" y1="-140" x2="80" y2="-140" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Second layer - wavy connection -->
+    <path d="M -120,-80 L -80,-80 Q -60,-80 -50,-70 Q -40,-60 -24,-60 Q -10,-60 0,-70 Q 10,-80 24,-60 Q 40,-60 50,-70 Q 60,-80 80,-80 L 120,-80"
+          fill="none" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="-120" cy="-80" r="6" fill="#00d4ff"/>
+    <circle cx="120" cy="-80" r="6" fill="#00d4ff"/>
+    
+    <!-- Third layer - larger wavy -->
+    <path d="M -140,-20 L -100,-20 Q -80,-20 -60,0 Q -40,20 -20,0 Q 0,-20 20,0 Q 40,20 60,0 Q 80,-20 100,-20 L 140,-20"
+          fill="none" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="-140" cy="-20" r="6" fill="#00d4ff"/>
+    <circle cx="140" cy="-20" r="6" fill="#00d4ff"/>
+    
+    <!-- Fourth layer - wavy connection -->
+    <path d="M -120,80 L -80,80 Q -60,80 -50,70 Q -40,60 -24,60 Q -10,60 0,70 Q 10,80 24,60 Q 40,60 50,70 Q 60,80 80,80 L 120,80"
+          fill="none" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="-120" cy="80" r="6" fill="#00d4ff"/>
+    <circle cx="120" cy="80" r="6" fill="#00d4ff"/>
+    
+    <!-- Bottom node -->
+    <circle cx="0" cy="140" r="24" fill="none" stroke="#00d4ff" stroke-width="8"/>
+    <circle cx="0" cy="140" r="10" fill="#00d4ff"/>
+    <line x1="-80" y1="140" x2="-30" y2="140" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    <line x1="30" y1="140" x2="80" y2="140" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Center glow effect -->
+    <circle cx="0" cy="0" r="30" fill="#00d4ff" opacity="0.2"/>
+    <circle cx="0" cy="0" r="15" fill="#00d4ff" opacity="0.3"/>
+  </g>
+</svg>
